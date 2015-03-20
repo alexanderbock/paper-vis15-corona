@@ -1,0 +1,304 @@
+\documentclass[journal]{vgtc}                % final (journal style)
+%\documentclass[review,journal]{vgtc}         % review (journal style)
+%\documentclass[widereview]{vgtc}             % wide-spaced review
+%\documentclass[preprint,journal]{vgtc}       % preprint (journal style)
+%\documentclass[electronic,journal]{vgtc}     % electronic version, journal
+
+%% Please use one of the ``review'' options in combination with the
+%% assigned online id (see below) ONLY if your paper uses a double blind
+%% review process. Some conferences, like IEEE Vis and InfoVis, have NOT
+%% in the past.
+
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[bookmarks,backref=true,linkcolor=black]{hyperref} 
+\usepackage{subfigure}
+
+\hypersetup{
+  pdfauthor = {},
+  pdftitle = {},
+  pdfsubject = {},
+  pdfkeywords = {},
+  colorlinks=true,
+  linkcolor= black,
+  citecolor= black,
+  pageanchor=true,
+  urlcolor = black,
+  plainpages = false,
+  linktocpage
+}
+
+\onlineid{0}
+\vgtccategory{Research}
+\vgtcinsertpkg
+%\preprinttext{To appear in IEEE Transactions on Visualization and Computer Graphics.}
+
+\def\etal{\textit{et al.}}
+\definecolor{MyGreen}{rgb}{0,0.7,0}
+\definecolor{MyWhite}{rgb}{1,1,1}
+\definecolor{MyGray}{rgb}{0.5,0.5,0.5}
+\definecolor{LightGray}{rgb}{0.7,0.7,0.7}
+\definecolor{DarkGray}{rgb}{0.3,0.3,0.3}
+\definecolor{DarkYellow}{rgb}{0.7,0.7,0.0}
+\definecolor{MyNavyBlue}{rgb}{0.2,0.3,0.7}
+\definecolor{darkgreen}{rgb}{0,0.55,0}
+\newcommand{\black}[1]{{\color{Black} #1}}
+\newcommand{\white}[1]{{\color{MyWhite} #1}}
+\newcommand{\gray}[1]{{\color{MyGray} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\green}[1]{{\color{MyGreen} #1}}
+\newcommand{\blue}[1]{{\color{MyNavyBlue} #1}}
+\newcommand{\yellow}[1]{{\color{DarkYellow} #1}}
+\newcommand{\maybe}[1]{\yellow{#1}}
+\newcommand{\rout}[1]{\red{\sout{#1}}}
+\newcommand{\repl}[2]{\rout{#1} \green{#2}}
+\newcommand{\fix}[1]{\red{\emph{(#1)}}}
+\newcommand{\Fix}[1]{\begin{itemize} \renewcommand\labelitemi{\red{--}} \item \red{#1} \end{itemize}}
+
+\newcommand{\todo}[1] {\textbf{[~}\textcolor {red}{#1}\marginpar{\textcolor {red}{\centerline{{\Huge \textbf{!}}}}}\textbf{~]}}
+\newcommand{\question}[1] {\textbf{[~}\textcolor {darkgreen}{#1}\marginpar{\textcolor {darkgreen}{\centerline{{\Huge \textbf{!}}}}}\textbf{~]}}
+\newcommand{\diff}[1]{[\textcolor{blue}{#1}\marginpar{\textcolor{blue}{\centerline{{\Huge \textbf{!}}}}}]}
+
+
+\title{Visual Verification of Space Weather Ensemble Simulations through Optical Flow Analysis}
+
+\author{
+    Alexander~Bock,~\textit{Student Member,~IEEE,}
+    Asher Pembroke,
+    M. Leila Mays,
+    Lutz Rastaetter,\\%
+    Anders Ynnerman,~\textit{Member, IEEE,}
+    and Timo Ropinski~\textit{Member, IEEE}%
+}
+
+\authorfooter {
+  \item A. Bock, A. Ynnerman are with Scientific Visualization Group, Link\"oping University, Sweden. E-mail: \{alexander.bock\,$\vert$\,anders.ynnerman\}@liu.se.
+  \item A. Pembroke, ML Mays, and L. Rastaetter are with NASA's Goddard Space Flight Center, Greenbelt, Maryland. E-mail: \{asher.d.pembroke\,$\vert$\, m.leila.mays\,$\vert$\, lutz.rastaetter\}@nasa.gov.
+  \item T. Ropinski is with the Visual Computing Research Group, Ulm University. E-mail: timo.ropinski@uni-ulm.de.
+}
+
+\shortauthortitle{Bock \MakeLowercase{\textit{et al.}}: Visual Verification of Space Weather Simulations}
+
+%% Abstract section.
+\abstract{%
+Supporting the growing field of space weather forecasting, we propose a system to analyze ensemble simulations of coronal mass ejections. As the current simulation techniques require manual input, uncertainty is introduced into the simulation pipeline leading to inaccurate predictions that can be mitigated by ensemble simulations. Using our system, the space weather analyst can compare ensemble members against ground truth data (arrival time and geoeffectivity) as well as time-dependent information derived from optical flow analysis of satellite imagery. By combining images from multiple satellites with a volumetric rendering of magnetohydrodynamics simulations in a multi-view setup, our flexible system provides the experts with the tools to increase the knowledge about the, as of yet not fully understood, principles behind the evolution and propagation of coronal mass ejections which pose a danger to Earth and interplanetary travels.
+
+%The current workflow requires the manual selection of parameters which introduces uncertainy into the simulation pipeline, leading to inaccurate predictions. We present a system that combines satellite imagery from the SOHO, STEREO A, and STEREO B satellites with a volumetric rendering of magnetohydrodynamics simulations of the solar system in order to provide space weather analysts with the means to compare ensemble runs against the ground truth data, thus fostering knowledge about space weather phenomena. Comparisons are performed on static information such as arrival time and time-varying information retrieved by extracting the optical flow from the satellite images and comparing that to the simulated velocity. The system provides a novel technique to simultaneously inspect the time-dependent quality measures of all observation instruments (SOHO [LASCO C3], STEREO A and B [Cor2, HI 1, and HI 2]) and allow the analyst to make an informed decision about the accuracy of the simulation.
+
+%The current technique of simulating coronal mass ejections in ENLIL simulations requires cone parameters that are manually derived from STEREO satellite imagery. This manual input is not perfect and introduces uncertainty into the simulation pipeline, leading to inaccurate predictions. We present a system that embeds satellite imagery from SOHO and STEREO A and B into a 3D volumetric rendering of ENLIL simulations. By extracting the optical flow from the images and renderings, we retrieve pairs of velocity fields that are utilized to derive a quality measure that is used to test the simulation against the ground truth satellite image data. The system provides a novel technique to simultaneously inspect the time-dependent quality measures of all observation instruments (SOHO [LASCO C3], STEREO A and B [Cor2, HI 1, and HI 2]) and allow the analyst to make an informed decision about the accuracy of the simulation. Lastly, we extend this system to deal with ensemble runs, generated by varying the cone parameters. The aforementioned quality measures are generated for each ensemble member and the system provides an interface to browser and assess the whole ensemble run at once, enabling the analyst to quickly select the ensemble member agreeing with the satellite data.%
+} % end of abstract
+
+%% Keywords that describe your work. Will show as 'Index Terms' in journal
+%% please capitalize first letter and insert punctuation after last keyword
+\keywords{Radiosity, global illumination, constant time}
+
+%% ACM Computing Classification System (CCS). 
+%% See <http://www.acm.org/class/1998/> for details.
+%% The ``\CCScat'' command takes four arguments.
+
+\CCScatlist{ % not used in journal version
+ \CCScat{K.6.1}{Management of Computing and Information Systems}%
+{Project and People Management}{Life Cycle};
+ \CCScat{K.7.m}{The Computing Profession}{Miscellaneous}{Ethics}
+}
+
+%% Uncomment below to include a teaser figure.
+%   \teaser{
+%   \centering
+%   \includegraphics[width=16cm]{CypressView}
+%   \caption{In the Clouds: Vancouver from Cypress Mountain.}
+%  }
+
+%% Uncomment below to disable the manuscript note
+%\renewcommand{\manuscriptnotetxt}{}
+
+%% Copyright space is enabled by default as required by guidelines.
+%% It is disabled by the 'review' option or via the following command:
+% \nocopyrightspace
+
+\def\etal{\textit{et al.}}
+%\renewcommand\floatpagefraction{1.0}
+%\renewcommand\topfraction{1.0}
+%\renewcommand\bottomfraction{.9}
+%\renewcommand\textfraction{.1}
+%\setcounter{totalnumber}{20}
+%\setcounter{topnumber}{10}
+%\setcounter{bottomnumber}{10}
+\definecolor{MyGreen}{rgb}{0,0.7,0}
+\definecolor{MyWhite}{rgb}{1,1,1}
+\definecolor{MyGray}{rgb}{0.5,0.5,0.5}
+\definecolor{LightGray}{rgb}{0.7,0.7,0.7}
+\definecolor{DarkGray}{rgb}{0.3,0.3,0.3}
+\definecolor{DarkYellow}{rgb}{0.7,0.7,0.0}
+\definecolor{MyNavyBlue}{rgb}{0.2,0.3,0.7}
+\definecolor{darkgreen}{rgb}{0,0.55,0}
+\newcommand{\black}[1]{{\color{Black} #1}}
+\newcommand{\white}[1]{{\color{MyWhite} #1}}
+\newcommand{\gray}[1]{{\color{MyGray} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\green}[1]{{\color{MyGreen} #1}}
+\newcommand{\blue}[1]{{\color{MyNavyBlue} #1}}
+\newcommand{\yellow}[1]{{\color{DarkYellow} #1}}
+\newcommand{\maybe}[1]{\yellow{#1}}
+\newcommand{\rout}[1]{\red{\sout{#1}}}
+\newcommand{\repl}[2]{\rout{#1} \green{#2}}
+\newcommand{\fix}[1]{\red{\emph{(#1)}}}
+\newcommand{\Fix}[1]{\begin{itemize} \renewcommand\labelitemi{\red{--}} \item \red{#1} 
+\end{itemize}}
+
+\newcommand{\todo}[1] {\textbf{[~}\textcolor {red}{#1}\marginpar{\textcolor {red}{\centerline{{\Huge \textbf{!}}}}}\textbf{~]}}
+\newcommand{\question}[1] {\textbf{[~}\textcolor {darkgreen}{#1}\marginpar{\textcolor {darkgreen}{\centerline{{\Huge \textbf{!}}}}}\textbf{~]}}
+\newcommand{\diff}[1]{[\textcolor{blue}{#1}\marginpar{\textcolor{blue}{\centerline{{\Huge \textbf{!}}}}}]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% START OF THE PAPER %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\firstsection{Introduction}
+\maketitle
+%% \section{Introduction} %for journal use above \firstsection{..} instead
+\emph{Space weather} is the description of the environmental conditions in our solar system and their effects on planets and spacecraft. The main factor in driving the space weather in our solar system is the Sun. Coronal mass ejections (CMEs) occur when magnetic fieldlines on the Sun reconnect, accelerating a plasma cloud away from the Sun and into the solar system. \emph{Space weather forecasting} is the endeavor of predicting the direction, velocity, and impact factor of CMEs when they hit objects in the solar system, like Earth or spacecraft. When spacecraft are hit by these particles, they can cause irreparable damage. Most of the plasma is deflected by Earth's magnetosphere and funneled towards the north and south pole, creating auroras. The biggest CME on record is the Carrington Event from 1859 that generated auroras as far south as the Sahara and induced currents in telegraph lines that caused electrical shocks to telegraph operators. It is estimated that, in North America alone, a similar event today would cause up to \$2.6 trillion in damages and create blackouts of up to 2 years due to destroyed transformers, a situation that can be completely mitigated by accurate space weather forecasting~\cite{lloyds2013impact}.
+
+Current predictions are based on simulations, whose input parameters are derived from imagery of the STEREO A, STEREO B, and SOHO satellites. In our system, we are using the widely used magnetohydrodynamic (MHD) simulation code ENLIL~\cite{odstrcil2003modeling} with the Wang-Sheeley-Arge model~\cite{parsons2011wang}, in which the CME is modelled as a cone originating from the Sun with direction, velocity, and opening angle as free parameters~\ref{fig:enlil}. The cone parameters are then used to generate initial conditions for the simulation. Currently, the cone parameters are manually derived from satellite images, which naturally introduces error into the simulation and thus requires verification. While the ENLIL-WSA simulation is the state-of-the-art approach, the assumption of a conical shape of the CME is not true in general, further increasing the need for a flexible verification tool.
+
+To mitigate the impact of measurement errors, simulation ensembles are generated by varying the free parameters and performing simulations for each combination. A simulation run can be verified in two ways. One, if the CME impacts the Earth or any suitable spacecraft in the solar system, ground-truth in-situ measurements of the arrival time, velocity, and magnetic field strength are recorded and compared against the values predicted by the simulation. Second, the rendering of the simulation can be visually compared to recordings from spacecraft equipped with coronagraph imagers. Currently, three spacecraft are capable of this technique; the SOHO is located at the L$_1$ point between Earth and the Sun and STEREO A and STEREO B are on heliocentric orbits. STEREO A and B have three imagers ranging from the Sun's surface all the way to the orbit of Earth and provide a stereoscopic view of the interplanetary space between the Sun and the Earth~\ref{fig:spacecraftlocation}.
+
+Our proposed system provides the space weather analyst with a three step workflow utilizing a multi-view setup to quickly assess the quality and accuracy of each ensemble member, the possibility to inspect the time-dependent error broken down by each available satellite and instrument, and to inspect a 3D rendering of the simulation results with integrated positions of different spacecraft, their instrument field of views, as well as planetary bodies. We have developed this three step workflow in close collaboration with the space weather analysts in a participatory design process. This approach proved to be very successful, as the number of experts in this field that will use the system is very low. This focussed design allowed us to create a system that is uniquely tailored to the needs of the expert forecasters and scientists. \todo{expand on the workflow and steps} \todo{expand on the possible users?}
+
+\section{Background}
+This section provides some necessary background information about space weather phenomena, the satellites used for image data acquisition, as well as the MHD simulation that is performed to acquire the 3 dimensional data, and the in-situ measurements that are used to verify the simulation runs.
+
+\subsection{Space Weather}
+Space weather is a collective term that "describes the conditions in space that affect Earth and its technological systems. Space Weather is a consequence of the behavior of the Sun, the nature of Earth’s magnetic field and atmosphere, and our location in the solar system. The active elements of space weather are particles, electromagnetic energy, and magnetic field, rather than the more commonly known weather contributors of water, temperature, and air"~\cite{noaaprofile}.
+
+One of the prominent elements of Space Weather are Coronal Mass Ejections (CMEs), which are large, coherent clouds of charged particles that are accelerated to escape velocity and into the solar system with an average speed of 500 km/s and average mass of $1.6 \times 10^12$kg~\ref{fig:cme}. They have been described as the "most energetic phenoma known to occur in the solar system"~\cite{Kahler:1987jt} and have a major impact on everything on Earth and the interplanetary space. When a CME hits the Earth, the charged particles are deflected by Earth's magnetic field into the poles, creating auroras. While most satellites on geocentric satellites are protected from the solar wind, a constant, slow-moving stream of particles from the Sun, a CME compresses Earth's magnetic field, exposing geostationary satellites to high-intensity particles, thus increasing the likelihood of irreversible destruction of satellites. Furthermore, the moving magnetic field induces currents on large, conductive structures on Earth, such as power lines, train tracks, or oil pipelines, which can lead to wear in those infrastructures. Particularly power lines are effected as transformers connected to these lines are sensitive to fluctuations in the current transmitted over the power lines and could be irreperably damaged by a strong CME. An additional effect of a CME hitting Earth is an increase in radiation exposure to passengers of flights over the north pole, furthermore increasing the necessity to predict these events to keep people from harm.
+
+\subsection{Data} \label{sec:data}
+In our system, we have to distinct sources of data. The first source is coronagraphs, mounted on three different satellites. These are optical telescopes taking images of the Sun. The second source of data comes from a magnetohydrodynamics simulation of the solar wind and a CME that produces a 4 dimensional, multivariate simulation of the solar system.
+
+\subsubsection{Coronagraphs} \label{sec:coronagraph}
+Coronagraphs are telescopes pointed at the Sun, that block out the main part of a Sun with a physical disc in order to allow acquisition of the corona surrounding the Sun (which is much fainter). This technique is similar to what happens during a solar eclipse, where the Moon acts as this blocking disc. Using this technique, the coronagraph registers the image of the, much fainter, corona which would otherwise we washed out by the intense light of the Sun which is one million times more intense. Figure~\ref{fig:coronagraph} shows a coronagraph image taken from SOHO.
+
+\noindent {\bfseries SOHO.} The Solar and Heliospheric Observatory (SOHO) is a satellite orbiting around the L$_1$ Lagrangian point, on the line between Earth and the Sun, constantly pointing at the Sun. This location allows for an uninterrupted observation of the Sun. The instrument onboard SOHO that we are using in the system is the Large Angle and Spectrometric Coronagraph (LASCO), which contains multiple coronagraphs~\cite{Brueckner:1995cb}. We are utilizing the C3 coronagraph that shows the area from 3.7 to 32 solar radii, with a resolution $1024^2$ pixels and an exposure time of 19 seconds. SOHO produces one image every 12 minutes. In preprocessing, the images are aligned to solar north and any additional roll angle is extracted from the meta data and applied to the image~\cite{wells1981fits}.
+
+\noindent {\bfseries STEREO.} The Solar Terrestrial Relations Observatory is a duplicate set of two satellites, STEREO A and STEREO B, that orbit the Sun in a similar fashion to Earth. STEREO A's orbit is slightly lower compared to Earth, which results in a lower orbital period. STEREO B's orbit is slightly higher, resulting in a bigger orbital period. This means that from Earth's point of view, STEREO A is moving ahead of Earth while STEREO B is falling behind (see Figure~\ref{fig:spacecraftlocation} for the position of STEREO A and B). The separation between STEREO A and B allows for stereoscopic images and thus 3 dimensional reconstruction of CME structures in the solar system. The instrument suite that we are using is the Sun Earth Connection Coronal and Heliospheric Investigation (SECCHI)~\cite{Socker:2000ic} of which we use three coronagraphs: The COR2 detectors observe the Sun from 2.5 to 15 solar radii with a field of view of 8 degrees. The  HI1 and HI2 imagers observe the space between the Sun and Earth from 15-90 solar radii (20 degrees field of view) and 70-330 solar radii (70 degrees field of view) respectively. HI1 produces images every 40 minutes while HI2 produces images every 2hr. While the COR2 image is reliable, the HI1 and HI2 images are unreliable due to Thomson scattering~\cite{howard2012thomson}, but the experts want to include it nevertheless.
+
+\subsubsection{Magnetohydrodynamics Simulation} \label{sec:mhd}
+In our system, we use the state-of-the-art MHD simulation code ENLIL~\cite{odstrcil2002merging} as the simulation for the solar wind and the attributes of the CME evolving through the solar wind. ENLILs simulation uses two sets of initial conditions; for the background solar wind, an earth-based magnetogram is used that drives the movement of the background plasma through the solar system. In a second simulation run, a distribution of charged particles for a CME is generated and this distribution is simulated over time as well. The end result of the simulation is the difference between the CME-run and the background run. The variables of the simulation that we are using in our system are the location, the velocity, particle number, and a tracer particle for discriminating the CME from the background. The simulation grid is a spherical coordinate system with a much higher radial resolution (+ 1 order of magnitude) compared to the angular resolutions. In our case, the delta time step of the simulation is 1 hour.
+
+In the ENLIL code that we use for our system, the location and shape of an erupting CME is approximated by a cone originating on the Sun's surface. The four open parameters, location in longitude and latitude, velocity and the opening angle of the cone, are manually determined using a tool called Stereo CAT, that uses STEREO A and STEREO B observations to triangulate the leading edge of the CME. Using the known position of both satellites, a three dimensional location is extracted that is used as a measurement. As the process of selecting a leading edge, and an opening angle is completely manual, there will naturally be inaccuracies in the selection. Dealing with this uncertainty is the main contribution of this paper. Furthermore, while the assumption of a conical shape for the erupting CME is still state-of-the-art, it is known that this shape does not accurately reflect the shape of the CME in all cases, leading to a further requirement of analysis tools.
+
+\subsubsection{In-Situ Measurements} \label{sec:insitu}
+Besides the optical measurements and simulations, there are multiple spacecraft in the solar system capable of measuring in-situ values. These measurements can either measure the CME effects directly, or measure secondary effects initiated by the CME. One of the most important direct measures is the arrival time at Earth or a spacecraft. The arrival time is the ground truth data as this is an important value that needs to be predicted by the simulation to be considered accurate. The same holds for the velocity of the CME at arrival time. Comparing the predicted values with the measured values for previous CMEs provides the scientists with valuable insight about the physics in the solar system. Another kind of in-situ measurement is the geoeffectivity, i.e. the effect on Earth's magnetic field that is created by the impact of the CME. While this information is important for the domain scientists, there is some uncertainty associated with this measurement as well. As the simulation codes cannot model the direction of the magnetic field that is frozen into the plasma, three sets of geoeffectivities are computed, for three distinct orientations of the CME's magnetic fields in relation to Earth's magnetic field:  parallel, orthogonal and at 45 degrees. A comparison must be made between the measured geoeffectivity and all three simulated geoeffectivities.
+
+\section{Related Work}
+\noindent {\bfseries Ensemble visualization.} Notable work dealing with the visualization of ensembles was done by Bruckner and M\"oller, who developed a system to explore a simulation parameter space allowing the user to reach a desired result~\cite{bruckner2010result}. The main difference to our framework is the a priori unknown desired result. Naturally, many similarities exist with the field of weather forecasting on Earth, which has greatly matured over the years. Sanyal~\etal\ developed a system to explore ensemble simulations for weather forecasting that is most similar to ours~\cite{sanyal2010noodles}. However, the inherent differences in weather forecasting compared to space weather forecasting (2.5D structures vs full 3D structures, the limited amount of measurement points, and missing theoretical frameworks) limit the application of their approach to space weather. Potter~\etal\ presented a system that uses a multi-view setup for ensemble visualization of statistics in climate modeling~\cite{potter2009ensemble}. Their approach informed our choice for a multi-view setup. There exist a plethora of ensemble visualization techniques that work well on 2 dimensional data, but unfortunately fail to do so in our case. Alabi~\etal\ use a surface slicing approach to show ensemble geometries at once and provide insight into multiple ensemble runs at once~\cite{alabi2012comparative}. This technique is not applicable in our case as we deal with volumetric renderings without a clear geometry. Whitaker~\etal\ generalized contour boxplots to handle ensemble data and aggregate their representations~\cite{whitaker2013contour}, while Kopp~\etal\ are using heatmaps to show information the distribution of ensemble members~\cite{kopp2014decision}. In both cases, however, the technique is difficult to generalize in three dimensions and thus not useable in our case.
+
+\noindent {\bfseries Space Weather.} One of the first attempts of rendering CME simulations was performed by Wang~\etal on specialized hardware, allowing for interactive frame rates~\cite{wang2004visualization}. The validity of time-dependent comparisons of CME simulations with satellite imagery was shown in related work by Manchester~\etal ~\cite{manchester2008three} and Rusin~\etal ~\cite{rusin2010comparing}, while Lugaz analyzed the expected accuracy and possible sources of error in this method~\cite{lugaz2010accuracy}.  Many visualization techniques have been applied to coronagraph images and coronal mass ejections. Jackson~\etal\ reconstructed a three dimensional volume from SMEI's white-light observations and compared these to coronagraph images. Colaninno and Vourlidas showed in principle that the application of optical flow analysis on coronal mass ejections is feasible. They found that "optical flow maps can [...] provide quantitative measurements"~\cite{Colaninno:2006ef}. Thernisien~\etal analyzed the effectiveness of using the STEREO satellites to do CME prediction~\cite{Thernisien:2009hx}, as well as comparing the predictive powers between pre-STEREO and STEREO~\cite{Thernisien:2011fl}. M\"ostl~\etal performed a similar evaluation on 22 CMEs using the STEREO's HI instrument suite.~\cite{Mostl:2014iv}. Lugaz provided in his work a theoretical background to the accuracy that is possible to achieve when fitting stereoscopic images to CMEs~\cite{Lugaz:2010dx}. Millward~\etal designed the software that allows the space weather analysts to manually segment the CME in multiple time steps from multiple view points in order to derive the necessary simulation boundary conditions~\cite{Millward:2013cm}. They also performed an evaluation, achieving a mean error in forecast accuracy of 7.5h.
+
+
+
+%\subsubsection{STEREO}
+%Cor2: white light Lyot coronagraph (2.5 - 15 solar radii); orientation: top $\rightarrow$ Solar North; 8 degrees opening angle; isoscele triangle: $a = \frac{2h}{\tan \theta}$
+%HI1: 20 degrees FoV; 14.0 degrees off-point; (15-90 solar radii); cadence: 40 minutes; orientation: top $\rightarrow$ equatorial North
+%HI2: 70 degrees FoV; 53.7 degrees off-point (70-330 solar radii); cadence: 2 hr; mean square error in positioning (HI2-A: 0.78 pixel, HI2-B: 1.48 pixel; firstHI\_Instrument\_Paper\_Revised  ; self-calibrating since images are used as star trackers; orientation: top $\rightarrow$ equatorial North; not properly usable due to Thomson effect \cite{howard2012thomson, deforest2013thomson, howard2013thomson, vourlidas2006proper, minnaert1930continuous, lugaz2008brightness}; experts want to see it included nevertheless. A CME itself is an optially thin medium which interacts with the Sun's visible light through Thomson scattering~\cite{}. More research has to be done on this end. This is the reason we don't do image comparisons.
+%Overlap between HI1 and HI2 of about 5 degrees
+
+%\subsection{MHD Simulations}
+%\begin{itemize}
+%\item What is ENLIL \cite{odstrcil2002merging}
+%\item HEEQ coordinate system; cf. orbit of planets (prograde vs retrograde)
+%\item Explain SOTA (cone-model) of boundary conditions
+%\item Cone model is a very broad approximation of actual shape of the CME (Example: big flare that missed Earth $\rightarrow$ assumptions wrong)
+%\item Sun's rotation causes CME to spiral
+%\end{itemize}
+
+\section{System}
+Our proposed system is based on a three-tier workflow to provide the space weather analyst and researcher with a greater understanding of the influence of parameter values onto the CME MHD simulations. The simulation ensemble members are distinguished by four varying parameters, the longitude and latitude of the cone, the opening angle and its velocity. The initial values for these parameters are hand-selected, from which an automatic sweep of parameters is generated to result in a few dozen simulation runs. For each ensemble member, a comparison with in-situ measurements is performed, whose results are encoded presented in the \emph{Ensemble Selection View} (Section~\ref{sec:selection}). In this view, it is possible to select one of the ensemble members with the mouse to get detailed information about that particular ensemble member. The time evolution of the image-based comparisons between simulation and satellite imagery is shown in the \emph{Timeline View} (Section~\ref{sec:timeline}). This view shows for each satellite and each available instrument the measured velocity vs the extracted simulated velocity. Each individual time in the timeline view can be selected and inspected in a 3D environment in the \emph{Rendering View} (Section~\ref{sec:rendering}). The workflow for the analyst is to inspect the Ensemble Selection View first, getting an overview of the accuracy and validity of ensemble members. Afterwards, the Timeline View is utilized for a subset of interesting ensemble members to gain a deeper understanding of the time-dependent comparisons, grouped by satellites and instruments. Finally, the Rendering View is used to inspect the specific time steps that were used for the comparison by viewing the volumetric rendering of the CME embedded with the satellite images, spacecraft, and planetary bodies. Using this approach, the expert gains a quick overview and can inspect a lot of information about the ensemble runs in a short time.
+
+
+\subsection{Ensemble Selection View} \label{sec:selection}
+The Ensemble Selection View (Figure~\ref{fig:selection}) provides an overview of the ensemble members and their validity. Each ensemble member is characterized by 4 parameters: direction (longitude and latitude), initial velocity, and the cone's opening angle. In all three subviews, the opening angle is mapped to the size of the glyph. The main view (top left) shows the longitude and latitude on the horizontal and vertical axes, the side views show longitude vs. velocity (bottom left) and latitude vs. velocity (top right). We investigated multiple setups (rendering 3D cones in a fully 3D environments, using magic mirrors, etc) to compare the different cone representations, but chose this representation as it provides the most intuitive feedback to the user.
+
+The color for each glyph can be mapped to various in-situ measurements. These ground-truth measurements are compared against the predicted values from the ensemble members to retrieve a fitness value for each measurement and ensemble member. The measurements that we consider in our system is the arrival time (be it at Earth or a spacecraft equipped with the appropriate measuring tools) and the three predicted geoeffectivities (Kp-Index) (see Section~\ref{sec:insitu}). Based on these measurements, the domain expert can make a pre-selection of valid ensemble members and focus his attention on border cases. By using a familiar red-green color scale, this preselection is done preattentively. We show the three different Kp indices in the same glyph representation to allow for easy comparision and sense-making. The circular glyph is divided into three segments, one for each predicted angle, and each segment shows the agreement of the simulation with the detected geoeffectivity just as in the arrive time case. To make the distinction between the different segments easier, each segment's location within the glyph and texture reflects the orientation of the predicted kp index (90, 135, 180 degrees) so that the scientist can see immediately which of the three predictions is the most accurate.
+
+Ensemble members can be selected by the user, which highlights the glyph and provides additional information in the lower right corner. This additional information is necessary, as although the color scheme provides relative comparison, the difference between predictions and ground-truth data is normalized to the worst ensemble member. Thus, it is necessary to inspect the actual numbers to get the full picture. In practice, this is just a precaution as most of the ensemble members' prediction results will be in the same vicinity. Furthermore, by selecting an ensemble member, its relevant data is loaded into the next view, the Timeline View, to be inspected in more detail.
+
+\subsection{Timeline View} \label{sec:timeline}
+When an ensemble member is selected in the Ensemble Selection View, its timeline is presented (Figure~\ref{fig:timeline}). This view shows the time-dependent information for each of the instruments for each satellite. The information is grouped into three parts. First, the combined error for all satellites and instruments is shown. Second, the error is broken down for each satellite and shown as a stacked graph providing access to the individual error. Third, in the most detailed view the individual errors for the instruments are shown enabling detailed analysis of the potential sources of error in the simulation. For each mode, a selection follows the mouse and provides detailed information for each instrument at the selected time step. A stacked graph was chosen as it was shown that they are better suited for reading the overall trend~\cite{byron2008stacked}, a characteristic that is important for the overall error. The colors of the stacks have been selected to maintain a mental linking between instruments and their satellites. A primary color was chosen for each satellite, and perceptually similar colors are used for the corresponding instruments.
+
+The algorithm used for computing the time-varying error is deliberately held flexible. Currently, we are experimenting with an approach that uses optical flow analysis~\cite{sun2010secrets} and a perceptual difference metric~\cite{yee2004perceptual} to compare a rendering of the simulation data with the satellite imagery.
+
+\todo{Why is velocity comparison important?}
+
+\subsubsection{Theme River}
+\begin{itemize}
+\item Theme River timeline (satellites, instruments; no pixel)
+\item Selecting parts of timeline for pixel information
+
+\item Theme River vs Stacked Graph
+\item Stacked Graph: Overall error easier to read ("Stacked Graphs - Geometry \& Aesthetics")
+\item \cite{havre2002themeriver}
+\item Stacked graphs better for reading overall trend\cite{byron2008stacked}
+\end{itemize}
+
+\subsubsection{Optical Flow}
+In order to extract the CME's velocity out of the satellite images, we use optical flow analysis on subsequent pairs of images. Optical flow is a method that computes a vector field which describes the movement of features from one image to the next. Using it on the satellite images, we obtain the velocity direction and magnitude of each pixel projected onto the image plane. By taking the cadence of images in to account, we can thusly compute the projected speed of the CME for each instrument and each satellite. The optical flow method that we are using is the one presented by Sun~\etal~\ref{sun2010secrets}.
+\todo{inaccuracies due to Thomson scattering}
+\todo{Performing the optical flow on various levels of detail}
+
+\subsubsection{Simulation Velocity}
+As the 3D velocity is one of the simulated parameters in the MHD model that we are utilizing, it is straightforward to extract it from the data. However, multiple aspects come into play in this approach. First, in order for a comparison, the scene camera has to be positioned at the correct location with the correct view direction and field-of-view settings. Second, during the raymarching the CME's velocities are collected as velocities in spherical coordinates. These radial and angular velocities are converted into Cartesian velocity vectors. As, during this probing, the ray will always pass through the whole volume, it will pick up both lobes of the CME (image?) and the different velocities have to be combined. The chose to adopt an averaging of the acquired velocities as both lobes individual velocities will cancel out and an approximation of the true velocity remains. We found that this approach provides good results in the absence of a simulated Thomson scattering. We perform the same averaging on the individual locations of the samples as well to arrive at a position from which the velocity vector is started. This is necessary as, in the next step, we need to project the Cartesian velocity vector into the image plane to acquire a velocity vector that is comparable to the velocity obtained by the optical flow analysis.
+
+\subsubsection{Comparison between optical flow and simulation velocity}
+\todo{Comparing min-max-avg values}
+
+\subsection{Rendering View} \label{sec:rendering}
+Selecting a time step in the Timeline View will set up the scene in the 3D rendering to provide a detailed, interactive view~(Figure~\ref{fig:rendering}). The scene that is rendered consists of the MHD volume data, the spacecraft and planets at their correct positions, as well as the correct satellite images for the selected time step. In the following steps, we will go through each individual component of the scene and describe it in detail. 
+
+\subsubsection{Satellites} \label{sec:satellites}
+Each instrument is projecting its most accurate image (i.e. the image that is least out of date), onto a plane using perspective texturing as proposed by Everitt~\etal~\cite{Everitt:2001tg}. The location of the virtual camera is retrieved using NAIF's SPICE library. With this library, the position of each object in the solar system is acquired at mission-critical precision. By using the same information in our rendering, we achieve the highest accuracy of our rendering possible. The other parameters of camera for the perspective texturing are setup using camera parameters of the instrument (field-of-view, viewing direction, rolling angle). The images data, alongside its metadata, is retrieved from the FITS file format that is used by the respective science teams. These files include information about exposure time, acquisition time, internal roll angle of the space craft and more.
+
+\subsubsection{Volume Rendering} \label{sec:volumerendering}
+The MHD simulation code that we are using for our system, ENLIL, is natively computed on a spherical grid with the Sun in the center. Given the spherical volume, i.\,e., a rectangular volume where the principal axes are the radius $r$, longitude $\phi$, and latitude $\theta$, we perform a modified version of the raycasting scheme introduced by Kr\"uger and Westermann~\cite{Kruger:2003ge}. Instead of a cubic proxy geometry, we utilize a tessellated sphere as the entry-exit points. Using the entry-exit points, a straight ray in world space is constructed, just as in regular volume raycasting. During the raymarching, each Cartesian sampling point on the view ray is transformed into the spherical coordinate system and the resulting tuple $(r, \phi, \theta)$ is used to look up the value in the spherical volume. Then, trilinear interpolation is performed on the $(r, \phi, \theta)$ sample to look up the correct value. By performing interpolation on the spherical coordinates, we automatically achieve an interpolation that interpolates along the great circles in the volume and thus stays true to the spherical nature of the data. One additional aspect of the spherical volume to utilize is the sample distribution. While it is regular in spherical space, when converting it into Cartesian space, it is non-uniform with a density fall-off of $1/r^3$. It is possible to exploit the $1/r^3$ dependency in data density in the rendering step to perform data-aware importance sampling along the view ray. As the data density decreases in the outer areas of the sphere, it is sufficient to sample the view ray less dense. Vice versa, it is beneficial to increase the sampling step size closer to the origin. This technique is not limited to the case of a spherical volume, but it can be trivially integrated as the radial distance to the center is already available.
+
+\noindent {\bfseries Filtering.} The results of the simulations contain many different parameters that we can use for visualizing the CME. The simulation parameters that we utilize in our system is the scaled number of particles $N \cdot r^2$ (necessary to obtain a uniform transfer function response), the velocity in spherical coordinates $v_r$, $v_\theta$, $v_\phi$, and a marker parameters $dp$ to distinguish the CME from the background solar wind. The first parameters are generated directly from the MHD simulation, while the $dp$ parameter is generated by seeing tracer particles along the outset of the CME in the beginning and advecting those particles along with the regular particles. Using this parameter allows us to quickly segment the CME. In order to perform the volume rendering, each sample point first samples the $dp$ volume which is used as a segmentation volume  -- modified by a transfer function --, and only samples the $N$ volume if the $dp$ transfer function response is positive. We investigates using the density parameter $\rho$, but during discussions with the experts, this turned out to produce undesired results. \todo{Double check}
+
+\subsubsection{Integrated Rendering} \label{sec:integration}
+In order to display the volume rendering combined with multiple, possibly transparent, geometries, we make use of an order-independent transparency method. In our system, we make use of a per-fragment sorting technique that is based on an A-Buffer technique as presented by Lindholm~\etal~\cite{Lindholm:2014fm}. With this technique, we are supporting a sufficient level of depth complexity and the possibility of transparent objects integrated with volume rendering. We require the transparency for generating interactive comparison images for the domain experts and to produce the comparisons between the simulated coronagraph images and the images acquired from the satellite images.
+
+%The ENLIL volume data is loaded, the spacecraft and planets are at their correct positions, and the satellite images for each instrument are loaded and shown in place using perspective texturing. The volumes are stored in a spherical coordinate system, meaning that the 3D texture stores $r$, $\phi$, and $\theta$ in the principal axes. Raycasting is performed in the Cartesian world space with each sample point along a ray converted into a spherical coordinate that is then used for lookup. This allows both for an adaptive sampling scheme, as there is more data available closer to the origin, as well as a more accurate interpolation scheme based on SLERP interpolation.
+
+%Simultaneous display of simulation, coronagraph images
+
+
+\subsubsection{Testing the Method}
+\begin{itemize}
+\item Overlap between Cor2 and Hi1 $\rightarrow$ extracted velocities should be the same in the overlapping region
+\end{itemize}
+
+
+\section{Application Case}
+\subsubsection{2014-04-18}
+
+\section{Future Work}
+\begin{itemize}
+\item 3D velocity reconstruction (inverse radon transform)
+\item interpolating between satellites (cross-correlation)
+\end{itemize}
+
+%% if specified like this the section will be committed in review mode
+\section*{Acknowledgments}
+The presented concepts have been realized using the Voreen framework (www.voreen.org). Simulation results have been provided by the Community Coordinated Modeling Center at Goddard Space Flight Center through their public Runs on Request system (http://ccmc.gsfc.nasa.gov). The CCMC is a multi-agency partnership between NASA, AFMC, AFOSR, AFRL, AFWA, NOAA, NSF and ONR.
+%\nocite{*}
+
+
+\bibliographystyle{abbrv}
+%%use following if all content of bibtex file should be shown
+%\nocite{*}
+\bibliography{bibliography}
+\end{document}
+
