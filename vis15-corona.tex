@@ -348,13 +348,45 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 \end{figure}
 
 \begin{figure*}
-\newcommand{\abTimelineImageHeight}{1.25\columnwidth}
+%\newcommand{\abImageWidth}{1.4\columnwidth}
+%\newcommand{\abSmallImageWidth}{0.\columnwidth}
+\newcommand{\abImageHeight}{5.25cm}
 \centering
-\fbox{\includegraphics[width=\abTimelineImageHeight]{figures/TimelineView.png}}
+\subfigure {
+  \includegraphics[height=\abImageHeight]{figures/timelineview_wide.png}
+}
+%  \subfigure {
+%    \includegraphics[width=\abSmallImageWidth]{figures/timelineview_hi1.png}
+%  }
+%  \subfigure {
+%    \includegraphics[width=\abSmallImageWidth]{figures/timelineview_soho_cor2.png}  
+%  }
+\subfigure {
+  \includegraphics[height=\abImageHeight]{figures/timelineview_combined.png}
+}
 \caption{The Timeline view provides insight into the time-dependent comparison of measured velocities. For each instrument and satellite, the velocity of a passing CME is determined using optical flow analysis and compared against the extracted velocity from the simulation run. Here, the average speeds for each instrument (colored lines) is shown together with the measurements from the simulation (black lines).}
 \label{fig:timeline}
 \end{figure*}
 
+%\begin{figure*}
+%\newcommand{\abImageWidth}{1.25\columnwidth}
+%\newcommand{\abSmallImageWidth}{0.2\columnwidth}
+%\centering
+%\subfigure {
+%  \includegraphics[width=\abImageWidth]{figures/timelineview_wide.png}
+%}
+%\begin{minipage}{0.3\columnwidth}
+%  \subfigure {
+%    \includegraphics[width=\columnwidth]{figures/timelineview_hi1.png}
+%  }
+%
+%  \subfigure {
+%    \includegraphics[width=\columnwidth]{figures/timelineview_soho_cor2.png}  
+%  }
+%\end{minipage}
+%\caption{The Timeline view provides insight into the time-dependent comparison of measured velocities. For each instrument and satellite, the velocity of a passing CME is determined using optical flow analysis and compared against the extracted velocity from the simulation run. Here, the average speeds for each instrument (colored lines) is shown together with the measurements from the simulation (black lines).}
+%\label{fig:timeline}
+%\end{figure*}
 
 The \emph{Ensemble Selection View} (see Figure~\ref{fig:selection}) provides an overview of all ensemble members and their validity as a glyph-based visualization. Each ensemble member is characterized by the 4 cone parameters: \emph{direction} (longitude and latitude), \emph{initial velocity}, and the \emph{opening angle}. This view is separated into subviews to provide three cuts of this available 4 dimensional parameter space and designed in such a way to reflect the two dimensional projection of the cones onto the Sun's surface. To this end, the opening angle is mapped to the size of the circular glyph in all subviews. The main view shows the longitude and latitude on the horizontal and vertical axes, providing the direction of the cone when looking at the Sun. The longitude and latitude are normalized to the available parameter set to fill the available screen space. The side views show longitude and velocity (bottom left) and velocity and latitude (top right) on the horizontal and vertical axes respectively. This setup was chosen to provide a magic mirror-like effect, where glyphs from the main view can be projected in straight lines onto the side views to determine the respective velocities~\cite{konig1999multiple}. We investigated different setups, such as rendering cones in an interactive 3 dimensional environment or using different kinds of glyphs, but we chose this representation as it provided the most intuitive feedback to our experts.
 
@@ -442,7 +474,7 @@ The ENLIL MHD simulation code in our system is natively computed on a spherical 
 Instead of a cubic proxy geometry, we utilize a tessellated sphere as the entry-exit points. In the case of spherical geometry, this provides the rendering with an effective  and inexpensive empty space skipping since about 50\% of the otherwise empty volume is removed. During the raymarching, each Cartesian prospective sampling point $(x,y,z)$ on the view ray is transformed into the spherical coordinate system and the resulting tuple $(r, \phi, \theta)$ is used to look up the value in the spherical volume.
 
 \begin{figure}[b!]
-\newcommand{\abImageWidth}{0.75\columnwidth}
+\newcommand{\abImageWidth}{0.65\columnwidth}
 \centering
 \includegraphics[width=\abImageWidth]{figures/spherical_interpolation.pdf}
 \caption{A 2-dimensional representation of the interpolation scheme that we employ on the spherical data. In the example we want to retrieve the value at the blue sampling location. While the (linear) radial interpolation provides the green values, the interpolation in $\phi$ produces the red values.}
