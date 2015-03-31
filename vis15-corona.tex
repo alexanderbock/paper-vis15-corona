@@ -154,7 +154,7 @@ The Spatial View (b) allows the inspection of an interactive volume rendering of
 %% \section{Introduction} %for journal use above \firstsection{..} instead
 \emph{Space weather} is the description of the environmental conditions in our solar system and their effects on planets, spacecraft, and human society. The effects influencing space weather in our solar system are created by the Sun. \emph{Coronal mass ejections} (CMEs) occur when magnetic field lines on the Sun's surface reconnect and plasma clouds are accelerated away from the Sun and into the solar system. An important part of \emph{Space weather forecasting} is the prediction of the direction and velocity of CMEs to forecast the arrival time and impact when they hit objects in the solar system, such as Earth or spacecraft. When spacecraft are hit by these events, they can cause irreparable damage to electronic systems. In the case of Earth, most of the plasma is deflected by Earth's magnetosphere and funneled towards the north and south pole, creating auroras. However, it also causes geomagnetically induced currents in terrestrial infrastructure, such as power grids. This happened in Quebec in 1989 when a CME struck Earth and induced currents in the power grid causing a blackout nine hours long. The biggest CME on record is the Carrington Event from 1859 that generated auroras as far south as the Sahara and induced currents in telegraph lines that gave electrical shocks to telegraph operators and sparked fires. The Lloyds insurance agency estimated that, in North America alone, a similar event today would cause up to \$2.6 trillion in damages and create blackouts of up to 2 years due to destroyed transformers~\cite{lloyds2013impact}. However, such a situation can be completely mitigated by accurate space weather forecasting.
 
-Current CME predictions created by space weather agencies world-wide are based on magnetohydrodynamic simulations whose input parameters are derived from satellite imagery. In the state-of-the-art simulation code, the CME is modeled based on a cone originating from the Sun with a direction (\emph{longitude} and \emph{latitude}), \emph{speed}, and \emph{opening angle} as free parameters. Currently, these cone parameters are manually selected in satellite images using triangulation algorithms, which naturally introduces error into the simulation pipeline and thus requires verification. Providing a system for mitigating this uncertainty through visualization is the main contribution of this paper.
+Current CME predictions created by space weather agencies world-wide are based on magnetohydrodynamic simulations whose input parameters are derived from satellite imagery. In the state-of-the-art simulation code, the CME is modeled based on a cone originating from the Sun with a direction (\emph{longitude} and \emph{latitude}), \emph{speed}, and \emph{opening angle} as free parameters. Currently, these cone parameters are manually selected in satellite images using triangulation algorithms, which naturally introduces errors in the simulation pipeline and thus requires verification. Providing a system for mitigating this uncertainty through visualization is the main contribution of this paper.
 
 \begin{figure*}
 \centering
@@ -184,30 +184,30 @@ To alleviate the impact of measurement inaccuracies, simulation ensembles are ge
 
 \begin{itemize}
 
-\item{ground-truth measurements of the arrival time, speed, and geoeffectivity are measured and compared against the values predicted by each simulation.} 
+\item{Ground-truth measurements of the arrival time, speed, and geoeffectivity are measured and compared against the values predicted by each simulation.} 
 
-\item{renderings of the simulation are compared with imagery from satellites to obtain time-varying information about the simulation's accuracy from multiple locations throughout the solar system.} 
+\item{Renderings of the simulation are compared with imagery from satellites to obtain time-varying information about the simulation's accuracy from multiple locations throughout the solar system.} 
 
 \end{itemize}
 
-A human-in-the-loop is needed for these verifications as the available data sources are noisy and uncertain. By providing an integrated and consistent system, we combine the different modalities and support the analyst in understanding the simulation results. It is currently not feasible to employ an automatic algorithm to determine whether a simulation accurately represents the measured reality due to the required expertise when dealing with, as of yet, not fully understood physical principles. 
+The human-in-the-loop paradigm needs to be applied for these verifications as the available data sources are noisy and uncertain. By providing an integrated and consistent system, we combine the different modalities and support the analyst in understanding the simulation results. It is currently not feasible to employ an automatic algorithm to determine whether a simulation accurately represents the measured reality, as the not yet fully understood physical principles might make a change of the simulation necessary. 
 
-Current systems used in simulation analysis do not integrate available data streams of ensemble members thus prohibiting the analyst from gaining deeper understanding of CMEs from them. In a participatory design phase together with analysts from one of the world-leading space weather research centers we have developed a novel three step visual workflow (see Figure~\ref{fig:workflow}) which provides the space weather analysts with a greater understanding of the influence of parameter values in the ensemble simulations: 
+Current systems used in simulation analysis do not integrate available data streams of ensemble members, and thus prohibit the analyst from gaining deeper understanding of CMEs from them. In a participatory design phase together with analysts from one of the world-leading space weather research centers we have developed a novel three step visual workflow (see Figure~\ref{fig:workflow}) which provides the space weather analysts with a greater understanding of the influence of parameter values in the ensemble simulations. The developed system comprises the following visualizations to achieve this goal:
 
 \begin{enumerate}
 
-\item{\emph{glyph-based} visualization of ensambles providing access to the measured ground truth values. This allows for a quick reduction of the number of interesting ensemble members the analyst needs to inspect in detail. Furthermore, it allows the analyst to quickly see if any of the simulations match the ground truth data.}
+\item{\emph{Glyph-based visualization} of ensembles providing access to the measured ground truth values. This allows for a quick reduction of the number of interesting ensemble members the analyst needs to inspect in detail. Furthermore, it allows the analyst to quickly see if any of the simulations match the ground truth data.}
 
-\item{\emph{graph visualization} enabling inspection of the time-dependent measurements for each available satellite for a specific ensemble member. These measurements are generated by extracting the CME speed from simulations and comparing them with the speed derived by optical flow analysis of satellite images.}
+\item{\emph{Graph visualization} enabling inspection of the time-dependent measurements for each available satellite for a specific ensemble member. These measurements are generated by extracting information about the CME dynamics from simulations, and comparing them with the speed derived by optical flow analysis of satellite images.}
 
-\item{\emph{volumetric rendering} of the simulation results with integrated positions of different satellites, their instrument field of views, as well as planetary bodies. Our proposed system is the first to bring volumetric rendering and comparative time-dependent analysis into the space weather analysis workflow}
+\item{\emph{Volumetric rendering} of the simulation results with integrated positions of different satellites, their instrument field of views, as well as planetary bodies.}
 
 \end{enumerate} 
 
-The result is a system that fuses multiple streams of data providing the space weather analyst with the means to inspect the details of ensemble simulations. As the physical processes governing the behavior of CMEs is not yet fully understood, visualization can have a beneficial impact in providing the space weather analysts with information to form and test new hypotheses to advance the field of solar physics.  
+Our proposed system is the first to bring volumetric rendering and comparative time-dependent analysis into the space weather analysis workflow. To provide the space weather analyst with the means to inspect the details of ensemble simulations, the system fuses multiple streams of data. While these data sources are involving uncertainty, and due to the fact that the processes governing the behavior of CMEs are not yet fully understood, visualization can have a beneficial impact in providing the space weather analysts with information to form and test new hypotheses in order to advance the field of solar physics.  
 
 \section{Space Weather Simulation and Data Acquisition}
-This section provides all necessary background information about space weather phenomena (Section~\ref{sec:spaceweather}), the satellites used for image data acquisition, the MHD simulations that are performed to acquire the volumetric data, the in-situ measurements that are used to verify the simulation runs (Section~\ref{sec:data}), and provides an overview of the currently employed workflow (Section~\ref{sec:currentworkflow}).
+This section provides the necessary background information about space weather phenomena (Section~\ref{sec:spaceweather}), the satellites used for image data acquisition, the MHD simulations that are performed to acquire the volumetric data, the in-situ measurements that are used to verify the simulation runs (Section~\ref{sec:data}). Furthermore, we provide an overview of the currently employed workflow (Section~\ref{sec:currentworkflow}).
 
 \subsection{Coronal Mass Ejections} \label{sec:spaceweather}
 \begin{figure*}
@@ -322,7 +322,7 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 
 \subsection{Ensemble Selection View} \label{sec:selection}
 \begin{figure}
-\newcommand{\abEnsembleImageHeight}{0.9\columnwidth}
+\newcommand{\abEnsembleImageHeight}{0.7\columnwidth}
 \centering
 \fbox{\includegraphics[width=\abEnsembleImageHeight]{figures/EnsembleSelectionView.png}}
 \caption{The Ensemble Selection view provides an overview of all ensemble member and their comparisons to ground truth, in-situ measurements such as arrival time, speed, and geoeffectivity. Each ensemble is represented by a glyph and located according to the 4 dimensional input parameters.}
@@ -330,7 +330,7 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 \end{figure}
 
 \begin{figure}
-\newcommand{\abImageWidth}{0.9\columnwidth}
+\newcommand{\abImageWidth}{0.7\columnwidth}
 \centering
 \fbox{\includegraphics[width=\abImageWidth]{figures/ensemble_kp.png}}
 \caption{The Ensemble Selection View showing the \kpIndex\ indices for all ensemble runs. The transparent lines agree with the orientation of the magnetic clock angle of 90\degree\ (=horizontal), 135\degree\ (=angled), and 180\degree\ (=vertical) for all ensemble members.}
