@@ -13,7 +13,7 @@
 \usepackage{graphicx}
 \usepackage{times}
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
-\usepackage[bookmarks,backref=true,linkcolor=black]{hyperref} 
+\usepackage[bookmarks,backref=true,linkcolor=black,draft]{hyperref} 
 \usepackage{subfigure}
 \usepackage{gensymb}
 \usepackage{flushend}
@@ -38,26 +38,26 @@
 %\preprinttext{To appear in IEEE Transactions on Visualization and Computer Graphics.}
 
 \def\etal{\textit{et al.}}
-\definecolor{MyGreen}{rgb}{0,0.7,0}
-\definecolor{MyWhite}{rgb}{1,1,1}
-\definecolor{MyGray}{rgb}{0.5,0.5,0.5}
-\definecolor{LightGray}{rgb}{0.7,0.7,0.7}
-\definecolor{DarkGray}{rgb}{0.3,0.3,0.3}
-\definecolor{DarkYellow}{rgb}{0.7,0.7,0.0}
-\definecolor{MyNavyBlue}{rgb}{0.2,0.3,0.7}
-\definecolor{darkgreen}{rgb}{0,0.55,0}
-\newcommand{\black}[1]{{\color{Black} #1}}
-\newcommand{\white}[1]{{\color{MyWhite} #1}}
-\newcommand{\gray}[1]{{\color{MyGray} #1}}
-\newcommand{\red}[1]{{\color{red} #1}}
-\newcommand{\green}[1]{{\color{MyGreen} #1}}
-\newcommand{\blue}[1]{{\color{MyNavyBlue} #1}}
-\newcommand{\yellow}[1]{{\color{DarkYellow} #1}}
-\newcommand{\maybe}[1]{\yellow{#1}}
-\newcommand{\rout}[1]{\red{\sout{#1}}}
-\newcommand{\repl}[2]{\rout{#1} \green{#2}}
-\newcommand{\fix}[1]{\red{\emph{(#1)}}}
-\newcommand{\Fix}[1]{\begin{itemize} \renewcommand\labelitemi{\red{--}} \item \red{#1} \end{itemize}}
+%\definecolor{MyGreen}{rgb}{0,0.7,0}
+%\definecolor{MyWhite}{rgb}{1,1,1}
+%\definecolor{MyGray}{rgb}{0.5,0.5,0.5}
+%\definecolor{LightGray}{rgb}{0.7,0.7,0.7}
+%\definecolor{DarkGray}{rgb}{0.3,0.3,0.3}
+%\definecolor{DarkYellow}{rgb}{0.7,0.7,0.0}
+%\definecolor{MyNavyBlue}{rgb}{0.2,0.3,0.7}
+%\definecolor{darkgreen}{rgb}{0,0.55,0}
+%\newcommand{\black}[1]{{\color{Black} #1}}
+%\newcommand{\white}[1]{{\color{MyWhite} #1}}
+%\newcommand{\gray}[1]{{\color{MyGray} #1}}
+%\newcommand{\red}[1]{{\color{red} #1}}
+%\newcommand{\green}[1]{{\color{MyGreen} #1}}
+%\newcommand{\blue}[1]{{\color{MyNavyBlue} #1}}
+%\newcommand{\yellow}[1]{{\color{DarkYellow} #1}}
+%\newcommand{\maybe}[1]{\yellow{#1}}
+%\newcommand{\rout}[1]{\red{\sout{#1}}}
+%\newcommand{\repl}[2]{\rout{#1} \green{#2}}
+%\newcommand{\fix}[1]{\red{\emph{(#1)}}}
+%\newcommand{\Fix}[1]{\begin{itemize} \renewcommand\labelitemi{\red{--}} \item \red{#1} \end{itemize}}
 
 \hyphenation{analysis}
 
@@ -126,7 +126,7 @@ Supporting the growing field of space weather forecasting, we propose a system t
 %    \fbox{\includegraphics[height=\abImageHeight]{figures/TimelineView.png}}
 %  }
   \subfigure[Spatial View] {
-    \fbox{\includegraphics[height=\abImageHeight, width=12cm]{figures/RenderingView.png}}
+    \fbox{\includegraphics[height=\abImageHeight]{figures/teaser_rendering.png}}
   }
   \caption{Our proposed system helps space weather analysts to gain a better understanding of ensemble simulations of coronal mass ejections. The Ensemble Selection View (a) shows comparisons for all ensemble members with ground-truth, in-situ measurements to provide the user with a global overview. 
 %The Timeline View (b) enables the comparison of time-dependent velocity data derived from optical flow analysis of satellite images and extracted velocity fields from the simulation for multiple instruments in the solar system.
@@ -140,40 +140,6 @@ The Spatial View (b) allows the inspection of an interactive volume rendering of
 %% Copyright space is enabled by default as required by guidelines.
 %% It is disabled by the 'review' option or via the following command:
 % \nocopyrightspace
-
-\def\etal{\textit{et al.}}
-%\renewcommand\floatpagefraction{1.0}
-%\renewcommand\topfraction{1.0}
-%\renewcommand\bottomfraction{.9}
-%\renewcommand\textfraction{.1}
-%\setcounter{totalnumber}{20}
-%\setcounter{topnumber}{10}
-%\setcounter{bottomnumber}{10}
-\definecolor{MyGreen}{rgb}{0,0.7,0}
-\definecolor{MyWhite}{rgb}{1,1,1}
-\definecolor{MyGray}{rgb}{0.5,0.5,0.5}
-\definecolor{LightGray}{rgb}{0.7,0.7,0.7}
-\definecolor{DarkGray}{rgb}{0.3,0.3,0.3}
-\definecolor{DarkYellow}{rgb}{0.7,0.7,0.0}
-\definecolor{MyNavyBlue}{rgb}{0.2,0.3,0.7}
-\definecolor{darkgreen}{rgb}{0,0.55,0}
-\newcommand{\black}[1]{{\color{Black} #1}}
-\newcommand{\white}[1]{{\color{MyWhite} #1}}
-\newcommand{\gray}[1]{{\color{MyGray} #1}}
-\newcommand{\red}[1]{{\color{red} #1}}
-\newcommand{\green}[1]{{\color{MyGreen} #1}}
-\newcommand{\blue}[1]{{\color{MyNavyBlue} #1}}
-\newcommand{\yellow}[1]{{\color{DarkYellow} #1}}
-\newcommand{\maybe}[1]{\yellow{#1}}
-\newcommand{\rout}[1]{\red{\sout{#1}}}
-\newcommand{\repl}[2]{\rout{#1} \green{#2}}
-\newcommand{\fix}[1]{\red{\emph{(#1)}}}
-\newcommand{\Fix}[1]{\begin{itemize} \renewcommand\labelitemi{\red{--}} \item \red{#1} 
-\end{itemize}}
-
-\newcommand{\todo}[1] {\textbf{[~}\textcolor {red}{#1}\marginpar{\textcolor {red}{\centerline{{\Huge \textbf{!}}}}}\textbf{~]}}
-\newcommand{\question}[1] {\textbf{[~}\textcolor {darkgreen}{#1}\marginpar{\textcolor {darkgreen}{\centerline{{\Huge \textbf{!}}}}}\textbf{~]}}
-\newcommand{\diff}[1]{[\textcolor{blue}{#1}\marginpar{\textcolor{blue}{\centerline{{\Huge \textbf{!}}}}}]}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% START OF THE PAPER %%%%%%%%%%%%%%%%%%%%%%
@@ -207,7 +173,7 @@ Current CME predictions created by space weather agencies world-wide are based o
 %\hfill{}
 %\subfigure[Coronagraph image of a coronal mass ejection with the Earth for scale]{
 %\fbox{\includegraphics[width=\columnwidth]{figures/CME.png}}
-\fbox{\includegraphics[width=0.5\columnwidth]{figures/CME.png}}
+\fbox{\includegraphics[width=0.5\columnwidth]{figures/CME.jpg}}
 %}
 \caption{Coronagraph image of an erupting coronal mass ejection with Earth shown to scale.}
 \label{fig:cme}
@@ -333,7 +299,7 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 
 \subsection{Ensemble Selection View} \label{sec:selection}
 \begin{figure}
-\newcommand{\abEnsembleImageHeight}{\columnwidth}
+\newcommand{\abEnsembleImageHeight}{0.9\columnwidth}
 \centering
 \fbox{\includegraphics[width=\abEnsembleImageHeight]{figures/EnsembleSelectionView.png}}
 \caption{The Ensemble Selection view provides an overview of all ensemble member and their comparisons to ground truth, in-situ measurements such as arrival time, speed, and geoeffectivity. Each ensemble is represented by a glyph and located according to the 4 dimensional input parameters.}
@@ -341,7 +307,7 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 \end{figure}
 
 \begin{figure}
-\newcommand{\abImageWidth}{\columnwidth}
+\newcommand{\abImageWidth}{0.9\columnwidth}
 \centering
 \fbox{\includegraphics[width=\abImageWidth]{figures/ensemble_kp.png}}
 \caption{The Ensemble Selection View showing the \kpIndex\ indices for all ensemble runs. The transparent lines agree with the orientation of the magnetic clock angle of 90\degree\ (=horizontal), 135\degree\ (=angled), and 180\degree\ (=vertical) for all ensemble members.}
@@ -354,7 +320,7 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 \newcommand{\abImageHeight}{5.25cm}
 \centering
 \subfigure {
-  \includegraphics[height=\abImageHeight]{figures/timelineview_wide.png}
+  \includegraphics[height=\abImageHeight]{figures/timeline.pdf}
 }
 %  \subfigure {
 %    \includegraphics[width=\abSmallImageWidth]{figures/timelineview_hi1.png}
@@ -365,7 +331,7 @@ For each ensemble member, a glyph-based comparison with in-situ measurements is 
 \subfigure {
   \includegraphics[height=\abImageHeight]{figures/timelineview_combined.png}
 }
-\caption{The Timeline view provides insight into the time-dependent comparison of measured velocities. For each instrument and satellite, the velocity of a passing CME is determined using optical flow analysis and compared against the extracted velocity from the simulation run. Here, the average speeds for each instrument (colored lines) is shown together with the measurements from the simulation (black lines). The numerical values are shown as an overlay. It is possible for the analyst to restrict the Timeline View to individual instruments (bottom right) and display the minimum and maximum velocities as line thickness (top right). TODO:  Add labels to axes, include insets of important fields}
+\caption{The Timeline view provides insight into the time-dependent comparison of measured velocities. For each instrument and satellite, the velocity of a passing CME is determined using optical flow analysis and compared against the extracted velocity from the simulation run. Here, the average speeds for each instrument (colored lines) is shown together with the measurements from the simulation (black lines). The numerical values are shown as an overlay. It is possible for the analyst to restrict the Timeline View to individual instruments (bottom right) and display the minimum and maximum velocities as line thickness (top right).}
 \label{fig:timeline}
 \end{figure*}
 
@@ -443,7 +409,7 @@ The user can interact with the Timeline View using the mouse and inspect each in
 \begin{figure}
 \newcommand{\abRenderingImageWidth}{\columnwidth}
 \centering
-\fbox{\includegraphics[width=\abRenderingImageWidth]{figures/RenderingView.png}}
+\fbox{\includegraphics[width=\abRenderingImageWidth]{figures/renderingview.png}}
 \caption{The Spatial View provides the analyst with access to all datasets we make use of in the system. It shows a volumetric rendering of the selected ensemble member at the given time. In the same scene, the images from the different satellites are integrated at their correct positions, giving the user the possibility to inspect the data.}
 \label{fig:rendering}
 \end{figure}
@@ -451,16 +417,15 @@ The user can interact with the Timeline View using the mouse and inspect each in
 Selecting a time step in the Timeline View will set up the scene in the \emph{Spatial View} (see Figure~\ref{fig:rendering}). The rendered scene consists of the ENLIL simulation volume data, the spacecraft and planets at their correct positions, as well as the satellite images for the selected time step in their registered locations. As our collaborating space weather research center was not utilizing volume rendering to analyze the simulations before, there was a special interest to include this part in our system in order to be able to inspect the 3 dimensional structure of the CMEs. In the following steps, we will describe each individual component of the scene in detail.
 
 \begin{figure}
-\newcommand{\abSatelliteComparisonImageWidth}{0.45\columnwidth}
+\newcommand{\abSatelliteComparisonImageWidth}{0.4\columnwidth}
 \centering
 \subfigure {
   \fbox{\includegraphics[width=\abSatelliteComparisonImageWidth]{figures/coronagraph.jpg}}
 }
-\hfill{}
 \subfigure {
   \fbox{\includegraphics[width=\abSatelliteComparisonImageWidth]{figures/coronagraph_simulation.jpg}}
 }
-  \caption{Adding transparency to the satellite image to compare the images with simulations allows the user to quickly compare the results of the simulation's volume rendering with the available coronagraph images.}
+  \caption{Adding transparency allows the user to quickly compare the results of the simulation's volume rendering with the available coronagraph images.}
 \label{fig:satellitecomparison}
 \end{figure}
 
@@ -478,7 +443,7 @@ Instead of a cubic proxy geometry, we utilize a tessellated sphere as the entry-
 \newcommand{\abImageWidth}{0.65\columnwidth}
 \centering
 \includegraphics[width=\abImageWidth]{figures/spherical_interpolation.pdf}
-\caption{A 2-dimensional representation of the interpolation scheme that we employ on the spherical data. In the example we want to retrieve the value at the blue sampling location. While the (linear) radial interpolation provides the green values, the interpolation in $\phi$ takes into account the red values. TODO: Annotations}
+\caption{A representation of the interpolation scheme that we employ on the spherical data. In the example we want to retrieve the value at the blue sampling location. While the (linear) radial interpolation provides the green values, the interpolation in $\phi$ takes into account the red values.}
 \label{fig:sphericalvolume}
 \end{figure}
 
@@ -506,7 +471,7 @@ In order to display the volume rendering coregistered with multiple transparent 
 \section{Application Case} \label{sec:applicationcase}
 We applied our system to multiple application cases, such as the Carrington-level CME of July 2012~\cite{baker2013major} or a simulation run of a CME from May 2011. However, the main application case for this paper is the real-time ensemble modeling of an Earth-directed CME that was observed on 18 April 2014. This CME was associated with an M7.3 class solar flare from Active Region 12036 located at S18\degree W29\degree with a peak at 13:03 UT. For more detailed information about the CME and description of the manual ensemble generation process, we refer the reader to~\cite{mays2015ensemble}. The application case consists of 36 ensemble members with the CME propagation directions clustered between -30\degree\ to -40\degree\ latitude, and around 10\degree\ west of the Sun-Earth line in longitude, while CME speeds range from $\approx$1300 to 1600 km/s. The median CME parameters are: speed of 1394\,km/s, direction of 9\degree\ longitude, -35\degree\ latitude, and a half-width of 46\degree . The prediction error for the mean predicted CME arrival time was -5.2 hours and the observed arrival time was just within the ensemble predicted spread. The ensemble members with arrival times closest to the observed time had CME input speeds in the range of 1200-1400 km/s, latitudes near -40\degree\ and half widths around 35\degree -40\degree . The NOAA real-time observed \kpIndex\ index reached 5 on 20 April with the CME arrival. The standard deviation of the overall \kpIndex\ forecast probability distribution is 1.1, with 84\% of the forecasts falling between \kpIndex\ 5 to 7.
 
-Figure~\ref{fig:selection} shows the Ensemble Selection view for this event. In the main view, it shows that ensembles with lower latitudes and lower speeds were more accurate in predicting the arrival time. Retrieving this information from the ensemble member was not possible before in the old workflow, as the connection between accuracy and direction was not presented. Figure~\ref{fig:selectionkp} shows the comparisons of geoeffectivities for the same event. It shows immediately that the 90\degree\ magnetic field clock angle agrees is the most accurate prediction, followed by the 135\degree\ angle. \todo{more of this}
+Figure~\ref{fig:selection} shows the Ensemble Selection view for this event. In the main view, it shows that ensembles with lower latitudes and lower speeds were more accurate in predicting the arrival time. Retrieving this information from the ensemble member was not possible before in the old workflow, as the connection between accuracy and direction was not presented. This information can now be used to query new simulations with low latitude and low speed to find the best agreement with the ground truth data. Figure~\ref{fig:selectionkp} shows the comparisons of geoeffectivities for the same event. It shows immediately that the 90\degree\ magnetic field clock angle agrees is the most accurate prediction, followed by the 135\degree\ angle. Even if this information is also available in the plots, the glyph based representation shows this information more clearly to the analyst.
 
 Using the volumetric rendering, our experts have gained new insight into the 3 dimensional structure of the CME. They found holes in the shock front of the CME, which were previously unknown and will result in a solar physics publication (see Figure~\ref{fig:cmestructure}). Furthermore, it is used for ruling out unphysical simulation results. For example in a magnetosphere simulation, plasma was ejected against the solar wind flow direction from the dayside Earth's magnetosphere and high-velocity flows were found in the inner magnetosphere. These features have not been observed and the model was modified to provide a more numerically stable coupling between the magnetosphere and the inner magnetosphere ring current modeling component using a different set of kinetic physics equations.
 
