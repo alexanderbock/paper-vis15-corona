@@ -1,0 +1,669 @@
+Dear Alexander Bock,
+
+Congratulations! We are pleased to inform you that your paper
+
+129 - Visual Verification of Space Weather Ensemble Simulations
+
+is CONDITIONALLY ACCEPTED for presentation in the conference track of SciVis at IEEE VIS 2015, to be held October 25-30 in Chicago, Illinois, USA.
+
+This year, IEEE SciVis received 134 submissions, out of which 33 were conditionally accepted to the TVCG track and 9 were conditionally accepted to the conference track. The acceptance rate for the TVCG track is 24.6% and the overall acceptance rate for both the TVCG track and conference track is 31.3%.
+
+This paper is among the 9 papers for the conference-only track, which has been designed to increase the exposure of scientific visualization activities around the world, and the participation of scientific researchers, practitioners and their collaborative partners. If eventually accepted, your paper will be published in the IEEE Digital Library as a SciVis conference paper.  Further details about this track can be found at http://ieeevis.org/year/2015/info/call-participation/scivis-papers.
+
+This conditional acceptance is subject to the satisfactory completion of the required minor revision. The primary reviewer has identified, in the summary review, the most important issues raised by the reviewers that you should address. They are included with the reviews below. Furthermore, we encourage you to read all comments of reviewers carefully, and use them to improve your paper. We will verify if the changes you made are satisfactory and will inform you of our findings. Note that it is not guaranteed yet that your paper will be accepted.
+
+The time line for the remainder of the process is as follows:
+
+June 27: Submit revised version for second stage review.
+      Upload this version via the conference management system PCS a 
+           https://precisionconference.com/~scivis15
+      Also upload a text file with a summary of the revisions made.
+
+July 11: Authors of conditionally accepted papers notified of final decision.
+
+August 1: Final papers and supplemental materials due, at:
+        https://precisionconference.com/~scivis15
+
+Your camera-ready conference paper may be up to 8 pages in length, with the last 1/2 page (final column) containing ONLY references (no additional text or figures). 
+
+Note that only conference papers that strictly conform to the formatting requirements can be accepted. Complete information regarding requirements for your revised PDF as well as supplementary material are available online:
+ http://junctionpublishing.org/vgtc/Track/vis-tvcg.html
+
+If your paper is accepted in the second round, it is mandatory for authors of all SciVis conference papers to submit a 30-sec Video Preview by August 1, 2015 (5:00pm PDT) on PCS. The Video Preview instructions are online at http://ieeevis.org/year/2015/info/presenter-information/video-previews . Also, if your paper is accepted and provided that your supplemental materials have been approved in the review process, we highly encourage you to include these materials (e.g. a video, additional images, software, source code) on the conference USB stick. Videos are limited to 5 minutes in length. The website http://junctionpublishing.org/vgtc/Tasks/supplement_tvcg.html provides guidelines for supplemental materials. The supplemental material deadline is Aug 01, 2015.
+
+The official conference web site, which will include the final program and registration information in the near future, is: http://www.ieeevis.org.
+
+It is imperative that at least one author per accepted conference paper must register to present the work. Also, an author from each paper will present a short preview during the papers fast-forward session.
+
+We are looking forward to an exciting and vibrant visualization conference, with an outstanding set of papers. We thank you for your contribution to IEEE SciVis 2015, and hope that you will succeed in producing a fully acceptable version of your conference paper.
+
+Sincerely,
+
+James Ahrens, Huamin Qu, Jos Roerdink
+
+IEEE SciVis 2015 Papers Chairs
+
+-------------------------------------------------------------------
+
+------------------------ Submission 129, Review 1 ------------------------
+
+Title: Visual Verification of Space Weather Ensemble Simulations
+
+Reviewer:           primary
+
+Second Round Recommendation
+
+
+
+Second Round Review Text
+
+
+Summary Rating
+
+  3  (<b>Borderline:</b> This paper might be acceptable with major changes.)
+
+Summary Review (1st review cycle)
+
+  We all appreciate this work and feel that this paper has certain merit:
+  good application, solving real-world problem, and some scientific
+  findings.
+      + good application and a new tool
+      + scientific finding generated from this work
+      + combination of techniques from info vis and sci vis
+
+  However, it is not quite ready in its present form, so a major revision
+  is recommended, hoping to encourage the authors to carefully revise the
+  paper:
+      - evaluation: how good and effective? expert feedback?
+      - clarity and details in the presentation
+      - motivation: selecting the uncertainty visualization 
+        techniques, case study, etc.
+  Please refer to the review comments for detail.
+
+Type of Paper
+
+  Application / Design Study
+
+Novelty
+
+  Weakly advocate against 
+
+Significance
+
+  Weakly advocate for
+
+Significance/Novelty: Rating Justification
+
+  Strengths:
+  - Interesting theme
+  - Certain amount of novelty in the system design
+  - Collaborative work with domain experts
+  - Certain scientific finding
+
+  Weaknesses:
+  - Evaluation
+  - Presentation and clarity
+  - Visualization not very novel
+
+Significance/Novelty: How To Improve? 
+
+  Need to at least revise the paper: i) to include certain evaluation and
+  ii) presentation and clarity
+
+Exposition and Detail
+
+  Probably not
+
+Exposition and Detail: How To Improve?
+
+  See below for the suggestions
+
+Paper Length
+
+  ok
+
+Limitations and Drawbacks
+
+  ---
+
+Method Evaluation 
+
+  no, evaluation is lacking
+
+References
+
+  kind of
+
+Final Judgment: Overall rating
+
+  <b>3 (Borderline):</b> This paper might be acceptable with major  changes. 
+
+Final Judgment: Justification
+
+  This paper proposes a visualization system with a three-tier workflow to
+  assist analysts to examine and compare ensemble members about CME.  In
+  detail, the visualization system consists of three window views: the
+  ensemble view to present the ensemble members (long., lat., speed, and
+  opening angle); the timeline view to plot the timeline detail of a
+  selected ensemble member; and the spatial view to show the 3D virtual
+  environment at the time step selected in the timeline view.
+
+  As compared to current tool used by analysts and existing research work
+  such as [28], the key motivations of this work (from Section 2) are:
+  i) to provide 3D structures of the CME rather than 2D or 2.5D structures
+  for analysts to see the internal structures of CME; and
+  ii) to consider multiple simulation ensembles to allow comparison among
+  individual ensemble members.
+
+  Overall, the theme of visualizing the space weather and CME with multiple
+  simulations and ground truth measurement is interesting, and I think that
+  the topic is a very good fit for the scientific visualization track of
+  the Vis conference.  In particular, the goal of this work is to mitigate
+  the parameter uncertainty through the visualization as described in the
+  paper introduction; this sounds a promising and practical research
+  direction.
+
+  Strengths:
+  - An interesting scientific theme with a practical application
+  - Certain amount of novelty in the system design
+  - Collaborative work with domain experts who seemed to have participated
+  in the research and given some suggestions to it
+  - Certain scientific finding developed from the work
+
+  Weaknesses:
+  - The major weakness of this work is the evaluation. From Sec 6, the
+  system was only applied to one particular case with multiple ensemble
+  members, but no evaluation is given in the paper, e.g., feedback and
+  comments from the domain experts.
+  - Presentation and clarity: the frontal part of the paper is clear and
+  well-written, but Section 5, which presents the methodology, is not easy
+  to follow, see below for detail.
+  - The visualization method is not very novel, e.g., the 3D visualization
+  that presents the solar neighborhood appears to be primitive.
+
+
+  Suggestions:
+
+  Sec 1: better to define what is an ensemble member earlier in the paper.
+
+  Sec 2: it mentioned the use of Graph visualization for inspecting
+  time-dependent measurements from the available satellite, but I guess it
+  simply means graph plotting (in the timeline view) rather than graph
+  visualization, right?  Try Google image search with "graph visualization"
+
+  Sec 5.1: it says "The main view shows the longitude and latitude on the
+  horizontal and vertical axes, providing the direction of the cone when
+  looking at the Sun" but if we look at the main views (top left) in Fig 8
+  and 9, the glyphs seem to be aligning along five columns.  If the spatial
+  domain in the main view represents longitude and latitude, why the glyphs
+  arrange like this?
+
+  Sec 5.1: it talks about the main view: "The longitude and latitude are
+  normalized to the available parameter set to fill the available screen
+  space."  Is the normalization uniform for longitude and latitude?  Should
+  show some labels in the ensemble view to present the scale.
+
+  Sec 5.1 paragraph 2: it should be more specific to talk about how the
+  parameters (arrival time, speed and Kp indices) are mapped to individual
+  colors.  Now, it is hard to understand the visual contents in the view. 
+  For example, Sec 5.1 later says "For the arrival time and the arrival
+  speed, the entire glyph is of the same color."  Need details to
+  understand this.
+
+  In the ensemble view, why the median ensemble is not an existing ensemble
+  member but a virtual member?  Statistically, median is the middle member
+  in the sorted data.
+
+  Sec 5.2: the timeline view is hard to follow. What is the meaning of each
+  colored line in the view?  From the video, I can guess a bit, but from
+  the paper, it doesn't present the detail.  In addition, what are the
+  units and range for the horizontal and vertical axes in the view?  The
+  meaning of how to convert per-pixel velocity to speed in this plot is
+  unclear until reading up to much later part in the paper.
+
+  Sec 5.2.3: it seems that the timeline view just plots 2D image-based
+  speed of the CME, but such a speed is 2D, so it depends on the relative
+  orientation of the image plane of a satellite measurement.  Why not
+  rectify the velocity to 3D by triangulation (with H1 and H2), so that we
+  can compute 3D velocity instead?
+
+  Sec 5.3.1: what does it mean by out-of-date?  I guess it refers to the
+  image that is closest in time to the selected time step, or the image
+  that is used to generate the timeline view, right?
+
+  Sec 5.3.2: what is N in the variables paragraph?  If N dot r^2 means the
+  number of particles, what is N?
+
+  Sec 5.3.2: What is a particle?
+
+  Sec 5.3.2: What does dp mean? What is p?
+
+  Sec. 6 first sentence: why "or" a simulation run? Sounds very strange.
+  Did you try both of them?
+
+  Video: In the 3D visualization, it would be good to show a sparse and
+  faint polar-coordinate-style wireframe grid to help indicate the orbital
+  plane of the Earth around the Sun.  This plane could provide a visual
+  reference to perceive the spatial context of the objects in the 3D
+  visualization.
+
+  Video: Use texture filtering when rendering the satellite images to avoid
+  the undesired aliasing effect when moving the virtual camera in 3D.
+
+
+  Minor:
+
+  Fig.2 top-left: I suppose the in-situ measurements are done on Earth or
+  with the Earth-orbiting satellites, right?  But the little image shown
+  here doesn't seem to be a clear representative image.
+
+  Fig.4d shows the time at which the SOHO image was taken. How about
+  Fig.4a-c?  It would be interesting to show the time for them also.  In
+  addition, it would be interesting to show the amount of angular (or time)
+  separation between the two STEREO satellites from Earth as in Fig.5a.
+
+  Some typos, e.g.,
+    Sec 4:
+      use -> used
+      provide -> provided
+      `` instead of '' before optical flow maps
+      missing a period at the end of sec 4
+    Sec 5.1:
+      between -> among
+
+  "References" sec.:
+  some references miss year
+  some references miss IEEE before transactions
+
+Ultimate Judgment
+
+  top 25%
+
+Expertise
+
+  3  (Expert)
+
+
+------------------------ Submission 129, Review 2 ------------------------
+
+Title: Visual Verification of Space Weather Ensemble Simulations
+
+Reviewer:           secondary
+
+Type of Paper
+
+  Application / Design Study
+
+Novelty
+
+  Strongly advocate for
+
+Significance
+
+  Strongly advocate for
+
+Significance/Novelty: Rating Justification
+
+  There are several different dimensions to this paper that warrant high
+  marks on significance and novelty.
+
+  - It combines techniques from info vis and sci vis into a single
+  application that is used to study space weather in a way that seems
+  both compelling and effective, and in a way not previously done
+  before. I note the team consists of space weather scientists as well
+  as visualization experts.
+
+  - This combination of techniques, and the individual techniques
+  themselves, are non-trivial. The system uses as input data from
+  observational and simulation sources, and solves several thorny
+  problems related to spatial registration for visual presentation. For
+  example, the simulation generates data on a spherical grid, and their
+  rendering system uses a novel spherically based raytracing volume
+  renderer, which required some effort on the authors' part, and that is
+  used for simultaneous display of both volumetric and
+  opaque/semi-transparent geometric information from both observational
+  and simulation sources.
+
+  - I was impressed with the concept, implementation, and presentation:
+  the visual verification of simulation ensemble members and
+  observational data. The paper clearly conveyed the idea and approach
+  of being able to quickly discern goodness-of-match of
+  ensemble member(s) with observed data across multiple dimensions. 
+
+Significance/Novelty: How To Improve? 
+
+  From a visual fidelity perspective, I found myself wondering how the
+  authors' volume rendering results would compare to output from other
+  CME-MHD codes (H3D, etc.)
+
+  One thing that was a bit unclear throughout the paper was the issue of
+  data size. How large are the datasets? Are there limits to the authors
+  approach/system that would limit the applicability of their system to
+  simulations of higher fidelity?
+
+Exposition and Detail
+
+  Absolutely
+
+Exposition and Detail: How To Improve?
+
+  I found the paper to be very well written and easy to follow. The authors
+  should perform a thorough copyedit pass to remedy numerous small typos
+  and grammatical rough edges. For example (and this just one example),
+  the authors use the term "ground truth" and "ground-truth" in a way
+  that seems a bit confusing. The basic concept the authors are talking
+  about is comparing simulation data with observations. Yes, the
+  observations are "ground truth", but the point is this concept should
+  make an appearance in the Introduction, for it is one of the main
+  contributions of the paper. 
+
+  While I appreciate the science-focused content in their Introduction,
+  I believe the authors may be able to expand their Introduction section
+  by a paragraph to give an overview of what is coming in the paper:
+  what problem are they solving?
+
+  I would also suggest rewriting the abstract to focus on the problem
+  being solved: comparison of simulation and observational data with the
+  aim of finding/discovering the best match of simulation parameters
+  that fit observed phenomena. The significance of the results is the
+  potential for greatly improved accuracy of space weather forecasting,
+  which in turn can have a direct impact on society in terms of dollars
+  and lives.
+
+Paper Length
+
+  I have no comments wrt length.
+
+Limitations and Drawbacks
+
+  See comments above wrt data size.
+
+  Are there other observational sources the authors might use to improve
+  accuracy?
+
+  I didn't get a good feel for the amount of error/uncertainty
+  introduced by the optical flow algorithm, esp wrt the impact on
+  accuracy of the space weather forecast. 
+
+  I liked the cross-hatch shading of glyphs in the Ensemble Selection
+  View to help discern orientation of the predicted K_p index (Figure
+  9), combined with subdividing the glyph into cross-hatched
+  regions. This seems like an effective way to communicate a lot of
+  information. I found myself wondering about the limits of this
+  approach: the authors show three different subdivisions for each
+  glyph, which works well in this figure. What happens if there is
+  further refinement in K_p? It would seem like the method would quickly
+  become intractable, and difficult to visually interpret.
+
+Method Evaluation 
+
+  The authors "evaluated" their system against known CME events that
+  occurred in the past. This approach seems reasonably sound. I did not
+  have a good feel for "how good" the results were; the authors
+  presented information comparing predicted and actual CME arrival time,
+  and statistics about the K_p forecast probability
+  distributions. However, I can't tell if these results are "good" or
+  "bad." A few more sentences here to clarify would be helpful.
+
+References
+
+  The references seem fine.
+
+Final Judgment: Overall rating
+
+  <b>4 (Probably accept):</b> This paper will be acceptable with minor changes. 
+
+Final Judgment: Justification
+
+  This paper is a solid example of a good application paper. It combines
+  multiple techniques, in places extending them in new ways for the
+  needs of the application and in others adapting techniques for the
+  application, in a novel way that meets specific application
+  objectives. The system provides new science capabilities that did not
+  previously exist in quite this way (there did exist a similar type of
+  system (Figure 6)); the authors' work is more than a mere incremental
+  improvement over previous work.
+
+Ultimate Judgment
+
+  top 10%
+
+Expertise
+
+  3  (Expert)
+
+
+------------------------ Submission 129, Review 3 ------------------------
+
+Title: Visual Verification of Space Weather Ensemble Simulations
+
+Reviewer:           external
+
+Type of Paper
+
+  System
+
+Novelty
+
+  Weakly advocate for
+
+Significance
+
+  Weakly advocate for
+
+Significance/Novelty: Rating Justification
+
+  Novel application area
+
+Significance/Novelty: How To Improve? 
+
+  Needs reworking
+
+Exposition and Detail
+
+  Probably not
+
+Exposition and Detail: How To Improve?
+
+
+Paper Length
+
+  length ok
+
+Limitations and Drawbacks
+
+
+Method Evaluation 
+
+  Needs a more thorough reporting of expert evaluation
+
+References
+
+  Some more needed in UV techniques
+
+Final Judgment: Overall rating
+
+  <b>3 (Borderline):</b> This paper might be acceptable with major  changes. 
+
+Final Judgment: Justification
+
+  On the whole, the authors present an interesting application of using
+  uncertainty visualization techniques to understand coronal mass
+  ejections. I feel that the exposition can be significantly improved.
+  I’d promote related work to section 2, right after introduction. There
+  is a lot of background material on coronal mass ejections, sensors, and
+  current tools which probably should be sub-sections of the of the
+  background. Once this is discussed, the new tool and workflow can be
+  introduced. This will keep it less confusing. I had to read the paper
+  twice to get the full picture. Fig 3 should definitely appear earlier.
+  The audience here will probably not be familiar with the scientific
+  background so anything that facilitates understanding is helpful.
+
+  There is a discussion of ensemble tools but not much discussion behind
+  the motivation for selecting the uncertainty visualization techniques in
+  use in the tool. Also, I’m having trouble understanding how all the
+  features in the tool come together. A screenshot of the entire tool will
+  probably be very helpful. Should start with eth overview and then go into
+  individual parts of the tool.
+
+  The case study also needs to be better motivated and the learnings from
+  the tool emphasized. Did the experts want to do something that the tool
+  did not allow them to do?
+
+  The figures need work. Legends of color scales, flow speed, etc are
+  missing. In 3D rendering, the position of the camera relative to the
+  objects is important. I’m somewhat concerned that the sizes of the
+  celestial bodies are exaggerated. Is this true? The video says that the
+  planets are not to scale. How does this affect analysis? Also the figure
+  captions are like an overview. What am I seeing? 
+
+  3D is not easy to do right. While I can see the exploratory aspects being
+  helpful, I’m having trouble with the scaling and general difficulty in
+  depth perception.
+
+  Implementation details of the system should be included. How is the data
+  and how was the performance of the tool?
+
+  Ensemble uncertainty is not clearly communicated in the exposition.
+
+
+
+Ultimate Judgment
+
+  top 50%
+
+Expertise
+
+  3  (Expert)
+
+
+------------------------ Submission 129, Review 4 ------------------------
+
+Title: Visual Verification of Space Weather Ensemble Simulations
+
+Reviewer:           external
+
+Type of Paper
+
+  Application / Design Study
+
+Novelty
+
+  Weakly advocate against 
+
+Significance
+
+  Weakly advocate for
+
+Significance/Novelty: Rating Justification
+
+  This paper proposed an application with a visualization system to help
+  domain scientists for visual analysis of space weather data from
+  multi-sources.  Ground-truth data from satellites' observations and
+  ensemble simulations data are combined to enable visual verification of
+  models. The proposed system contains three steps: select ensemble member
+  from ensemble selection view, select time step from timeline view, and
+  view rendering result in spatial view. A case is provided to demonstrate
+  the effectiveness of the system.
+
+  There is no doubt that the proposed system has solved a real problem in
+  space weather forecasting using visualization. However, from the
+  visualization side, visualization design and details in the proposed work
+  is questionable.
+
+Significance/Novelty: How To Improve? 
+
+  Visualization used in the system are not well-designed and not intuitive.
+  For example the encoding of initial speed in ensemble selection view, and
+  the serious clutter problem of each ensemble member (circle).
+
+  The proposed system also disables the comparison of ensemble members
+  along time dimension, which should be a task from domain scientists (as
+  Figure 7 shows).
+
+  Moreover, the authors deliberately made some settings to make the
+  visualization even more trivial, but with no rationality. For example,
+  only three angle scenarios (90, 135, 180) are chosen for visualization of
+  geoeffectivty, and only 3 variables are chosen from ENLIL simulation to
+  volume rendering. 
+
+  It seems the visual design is not able to scale to more choices. It is
+  doubtful such choices could fulfill the requirements from domain tasks.
+
+  There are also some other minor problems:
+  1. Color scales and numerical scales are lost int many figures.
+
+  2. What is Graph visualization in Section 2?
+
+  3. What's the meaning of (a)-(d) in Figure 10?
+
+Exposition and Detail
+
+  Probably not
+
+Exposition and Detail: How To Improve?
+
+  see above
+
+Paper Length
+
+  fine. 
+
+Limitations and Drawbacks
+
+  Major part is the visualization design to support the analysis task as
+  mentioned above.
+
+  The technique problems, such as optical flow analysis, raymarching in
+  Cartesian world, coordinate transformation, interpolation for sampling
+  points etc. , are mainly developed based on the existing algorithms, from
+  this novelty point of view, the contribution seems to be not enough.
+
+  In the ensemble selection view, the authors use four sub-view to
+  visualize four parameters (longitude, latitude, initial speed and opening
+  angle) in total, which is not space efficient.
+
+  The design in ensemble selection view will induce too much visual
+  clutter, the circular glyph will overlap each other and hard to
+  distinguish if the data size increases. Furthermore, one of important
+  goals of the top-right sub-view and bottom-left sub-view is to disperse
+  the glyph away from each other to distinguish them by the third variable,
+  the speed, however, in the two sub-view, there is still too much clutter,
+  which will bring some difficulties in comparing and selecting the glyph.
+
+   As for most of ensemble data , there are many variables and parameters
+  should be explored, however, this paper use some basic and simple design
+  to show limited variables. In the timeline view and spatial view, it just
+  allow the users to compare a single ensemble member each time.
+
+Method Evaluation 
+
+  It is OK such paper has no formal user study, but only case studies.
+  However, the case shown in the paper is not challenging. Only very
+  limited capacity of visual analysis is demonstrated in the paper. It make
+  questionable for the effectiveness of such work. 
+
+References
+
+
+Final Judgment: Overall rating
+
+  <b>3 (Borderline):</b> This paper might be acceptable with major  changes. 
+
+Final Judgment: Justification
+
+  This work show an interesting visualization application.  However, as
+  mentioned above, the novelty, design of the visualization, should be
+  improved before it is ready for publication.
+
+Ultimate Judgment
+
+  the rest
+
+Expertise
+
+  3  (Expert)
+
+
+
+-------------------------------------------------------------------

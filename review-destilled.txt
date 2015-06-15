@@ -1,0 +1,193 @@
+- no evaluation is given in the paper, e.g., feedback and   comments from the domain experts
+- Section 5, which presents the methodology, is not easy to follow, see below for detail.
+- The visualization method is not very novel, e.g., the 3D visualization that presents the solar neighborhood appears to be primitive.
+
+  Suggestions:
+
+  Sec 1: better to define what is an ensemble member earlier in the paper.
+
+  Sec 2: it mentioned the use of Graph visualization for inspecting
+  time-dependent measurements from the available satellite, but I guess it
+  simply means graph plotting (in the timeline view) rather than graph
+  visualization, right?  Try Google image search with "graph visualization"
+
+  Sec 5.1: it says "The main view shows the longitude and latitude on the
+  horizontal and vertical axes, providing the direction of the cone when
+  looking at the Sun" but if we look at the main views (top left) in Fig 8
+  and 9, the glyphs seem to be aligning along five columns.  If the spatial
+  domain in the main view represents longitude and latitude, why the glyphs
+  arrange like this?
+
+  Sec 5.1: it talks about the main view: "The longitude and latitude are
+  normalized to the available parameter set to fill the available screen
+  space."  Is the normalization uniform for longitude and latitude?  Should
+  show some labels in the ensemble view to present the scale.
+
+  Sec 5.1 paragraph 2: it should be more specific to talk about how the
+  parameters (arrival time, speed and Kp indices) are mapped to individual
+  colors.  Now, it is hard to understand the visual contents in the view. 
+  For example, Sec 5.1 later says "For the arrival time and the arrival
+  speed, the entire glyph is of the same color."  Need details to
+  understand this.
+
+  In the ensemble view, why the median ensemble is not an existing ensemble
+  member but a virtual member?  Statistically, median is the middle member
+  in the sorted data.
+
+  Sec 5.2: the timeline view is hard to follow. What is the meaning of each
+  colored line in the view?  From the video, I can guess a bit, but from
+  the paper, it doesn't present the detail.  In addition, what are the
+  units and range for the horizontal and vertical axes in the view?  The
+  meaning of how to convert per-pixel velocity to speed in this plot is
+  unclear until reading up to much later part in the paper.
+
+  Sec 5.2.3: it seems that the timeline view just plots 2D image-based
+  speed of the CME, but such a speed is 2D, so it depends on the relative
+  orientation of the image plane of a satellite measurement.  Why not
+  rectify the velocity to 3D by triangulation (with H1 and H2), so that we
+  can compute 3D velocity instead?
+
+  Sec 5.3.1: what does it mean by out-of-date?  I guess it refers to the
+  image that is closest in time to the selected time step, or the image
+  that is used to generate the timeline view, right?
+
+  Sec 5.3.2: what is N in the variables paragraph?  If N dot r^2 means the
+  number of particles, what is N?
+
+  Sec 5.3.2: What is a particle?
+
+  Sec 5.3.2: What does dp mean? What is p?
+
+  Sec. 6 first sentence: why "or" a simulation run? Sounds very strange.
+  Did you try both of them?
+
+  Video: In the 3D visualization, it would be good to show a sparse and
+  faint polar-coordinate-style wireframe grid to help indicate the orbital
+  plane of the Earth around the Sun.  This plane could provide a visual
+  reference to perceive the spatial context of the objects in the 3D
+  visualization.
+
+  Video: Use texture filtering when rendering the satellite images to avoid
+  the undesired aliasing effect when moving the virtual camera in 3D.
+
+  Minor:
+
+  Fig.2 top-left: I suppose the in-situ measurements are done on Earth or
+  with the Earth-orbiting satellites, right?  But the little image shown
+  here doesn't seem to be a clear representative image.
+
+  Fig.4d shows the time at which the SOHO image was taken. How about
+  Fig.4a-c?  It would be interesting to show the time for them also.  In
+  addition, it would be interesting to show the amount of angular (or time)
+  separation between the two STEREO satellites from Earth as in Fig.5a.
+
+  Some typos, e.g.,
+    Sec 4:
+      use -> used
+      provide -> provided
+      `` instead of '' before optical flow maps
+      missing a period at the end of sec 4
+    Sec 5.1:
+      between -> among
+
+  "References" sec.:
+  some references miss year
+  some references miss IEEE before transactions
+
+===
+
+  From a visual fidelity perspective, I found myself wondering how the
+  authors' volume rendering results would compare to output from other
+  CME-MHD codes (H3D, etc.)
+
+  One thing that was a bit unclear throughout the paper was the issue of
+  data size. How large are the datasets? Are there limits to the authors
+  approach/system that would limit the applicability of their system to
+  simulations of higher fidelity?
+
+  perform a thorough copyedit pass to remedy numerous small typos and grammatical rough edges
+
+  The basic concept the authors are talking
+  about is comparing simulation data with observations. Yes, the
+  observations are "ground truth", but the point is this concept should
+  make an appearance in the Introduction, for it is one of the main
+  contributions of the paper. 
+
+  While I appreciate the science-focused content in their Introduction,
+  I believe the authors may be able to expand their Introduction section
+  by a paragraph to give an overview of what is coming in the paper:
+  what problem are they solving?
+
+  I would also suggest rewriting the abstract to focus on the problem
+  being solved: comparison of simulation and observational data with the
+  aim of finding/discovering the best match of simulation parameters
+  that fit observed phenomena. The significance of the results is the
+  potential for greatly improved accuracy of space weather forecasting,
+  which in turn can have a direct impact on society in terms of dollars
+  and lives.
+
+  Are there other observational sources the authors might use to improve
+  accuracy?
+
+  I didn't get a good feel for the amount of error/uncertainty
+  introduced by the optical flow algorithm, esp wrt the impact on
+  accuracy of the space weather forecast. 
+
+  The authors "evaluated" their system against known CME events that
+  occurred in the past. This approach seems reasonably sound. I did not
+  have a good feel for "how good" the results were; the authors
+  presented information comparing predicted and actual CME arrival time,
+  and statistics about the K_p forecast probability
+  distributions. However, I can't tell if these results are "good" or
+  "bad." A few more sentences here to clarify would be helpful.
+
+  ===
+
+  I’d promote related work to section 2, right after introduction. There
+  is a lot of background material on coronal mass ejections, sensors, and
+  current tools which probably should be sub-sections of the of the
+  background. Once this is discussed, the new tool and workflow can be
+  introduced. This will keep it less confusing. I had to read the paper
+  twice to get the full picture. Fig 3 should definitely appear earlier.
+  The audience here will probably not be familiar with the scientific
+  background so anything that facilitates understanding is helpful.
+
+  There is a discussion of ensemble tools but not much discussion behind
+  the motivation for selecting the uncertainty visualization techniques in
+  use in the tool. Also, I’m having trouble understanding how all the
+  features in the tool come together. A screenshot of the entire tool will
+  probably be very helpful. Should start with eth overview and then go into
+  individual parts of the tool.
+
+  The case study also needs to be better motivated and the learnings from
+  the tool emphasized. Did the experts want to do something that the tool
+  did not allow them to do?
+
+  The figures need work. Legends of color scales, flow speed, etc are
+  missing. In 3D rendering, the position of the camera relative to the
+  objects is important. I’m somewhat concerned that the sizes of the
+  celestial bodies are exaggerated. Is this true? The video says that the
+  planets are not to scale. How does this affect analysis? Also the figure
+  captions are like an overview. What am I seeing? 
+
+  Implementation details of the system should be included. How is the data
+  and how was the performance of the tool?
+
+  Ensemble uncertainty is not clearly communicated in the exposition
+
+  ===
+
+  Moreover, the authors deliberately made some settings to make the
+  visualization even more trivial, but with no rationality. For example,
+  only three angle scenarios (90, 135, 180) are chosen for visualization of
+  geoeffectivty, and only 3 variables are chosen from ENLIL simulation to
+  volume rendering.
+
+  There are also some other minor problems:
+  1. Color scales and numerical scales are lost int many figures.
+
+  2. What is Graph visualization in Section 2?
+
+  3. What's the meaning of (a)-(d) in Figure 10?
+
+  In the timeline view and spatial view, it just allow the users to compare a single ensemble member each time.
