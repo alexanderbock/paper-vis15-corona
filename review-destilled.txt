@@ -55,7 +55,7 @@ units and range for the horizontal and vertical axes in the view?  The
 meaning of how to convert per-pixel velocity to speed in this plot is
 unclear until reading up to much later part in the paper.
 
-YYY
+YYY  -> Write into response letter
 Sec 5.2.3: it seems that the timeline view just plots 2D image-based
 speed of the CME, but such a speed is 2D, so it depends on the relative
 orientation of the image plane of a satellite measurement.  Why not
@@ -71,30 +71,30 @@ XXX
 Sec 5.3.2: what is N in the variables paragraph?  If N dot r^2 means the
 number of particles, what is N?
 
-YYY
+YYY -> XXX
 Sec 5.3.2: What is a particle?
 
-YYY
+YYY -> XXX
 Sec 5.3.2: What does dp mean? What is p?
 
 XXX
 Sec. 6 first sentence: why "or" a simulation run? Sounds very strange.
 Did you try both of them?
 
-YYY
+YYY -> XXX
 Video: In the 3D visualization, it would be good to show a sparse and
 faint polar-coordinate-style wireframe grid to help indicate the orbital
 plane of the Earth around the Sun.  This plane could provide a visual
 reference to perceive the spatial context of the objects in the 3D
 visualization.
 
-YYY
+YYY -> XXX
 Video: Use texture filtering when rendering the satellite images to avoid
 the undesired aliasing effect when moving the virtual camera in 3D.
 
 Minor:
 
-YYY
+YYY -> XXX
 Fig.2 top-left: I suppose the in-situ measurements are done on Earth or
 with the Earth-orbiting satellites, right?  But the little image shown
 here doesn't seem to be a clear representative image.
@@ -122,12 +122,19 @@ some references miss IEEE before transactions
 
 ===
 
-YYY
+YYY -> Response
 From a visual fidelity perspective, I found myself wondering how the
 authors' volume rendering results would compare to output from other
 CME-MHD codes (H3D, etc.)
+-> Reply:
+Here are other MHD heliopsheric models that include CMEs, for example SWMF/Solar or CORHEL. THere are a few similar models developed in Europe.
+These models include solar corona and have inner boundary near the solar surface, while Enlil inner boundary is at 21.5 Solar radii.
+These models are much much slower than Enlil and are not implemented in real time or in CCMC Runs-on-Request system.
+Modelers sometime show results. One of such simulations (SWMF/Solar was implemented in Journey to the Star movie (without volumetric visualization.
+There are on-going efforts to develop a fast and robust SWMF/Solar that we will be able to run in near real-time. There is a chance that there will be some progress by the time you will come in fall.
 
-YYY
+
+YYY -> XXX
 One thing that was a bit unclear throughout the paper was the issue of
 data size. How large are the datasets? Are there limits to the authors
 approach/system that would limit the applicability of their system to
@@ -140,13 +147,14 @@ observations are "ground truth", but the point is this concept should
 make an appearance in the Introduction, for it is one of the main
 contributions of the paper. 
 
-ZZZ
+ZZZ -> Rebuttal in response letter
 While I appreciate the science-focused content in their Introduction,
 I believe the authors may be able to expand their Introduction section
 by a paragraph to give an overview of what is coming in the paper:
 what problem are they solving?
 
-ZZZ
+ZZZ -> Add ensemble into abstract
+    -> Significance for the visualization
 I would also suggest rewriting the abstract to focus on the problem
 being solved: comparison of simulation and observational data with the
 aim of finding/discovering the best match of simulation parameters
@@ -159,7 +167,7 @@ and lives.
 Are there other observational sources the authors might use to improve
 accuracy?
 
-ZZZ
+ZZZ -> Write in response letter
 I didn't get a good feel for the amount of error/uncertainty
 introduced by the optical flow algorithm, esp wrt the impact on
 accuracy of the space weather forecast. 
@@ -175,7 +183,8 @@ distributions. However, I can't tell if these results are "good" or
 
 ===
 
-ZZZ
+ZZZ -> Write letter; background is shortened and it is good now
+-> Exchange Fig 3 and 2
 I’d promote related work to section 2, right after introduction. There
 is a lot of background material on coronal mass ejections, sensors, and
 current tools which probably should be sub-sections of the of the
@@ -185,7 +194,8 @@ twice to get the full picture. Fig 3 should definitely appear earlier.
 The audience here will probably not be familiar with the scientific
 background so anything that facilitates understanding is helpful.
 
-ZZZ
+ZZZ -> Add overview figure into workflow and add arrows on top of them
+ -> Rest: address in the letter
 There is a discussion of ensemble tools but not much discussion behind
 the motivation for selecting the uncertainty visualization techniques in
 use in the tool. Also, I’m having trouble understanding how all the
@@ -198,27 +208,27 @@ The case study also needs to be better motivated and the learnings from
 the tool emphasized. Did the experts want to do something that the tool
 did not allow them to do?
 
-YYY
+YYY -> XXX
 The figures need work. Legends of color scales, flow speed, etc are
 missing. In 3D rendering, the position of the camera relative to the
 objects is important.
 
----
+ZZZ -> Add comment to video and rebuttal letter
 I’m somewhat concerned that the sizes of the
 celestial bodies are exaggerated. Is this true? The video says that the
 planets are not to scale. How does this affect analysis? Also the figure
 captions are like an overview. What am I seeing? 
 
----
+ZZZ -> Add in rebuttal letter (not time-critical)
 Implementation details of the system should be included. How is the data
 and how was the performance of the tool?
 
-ZZZ
+---
 Ensemble uncertainty is not clearly communicated in the exposition
 
 ===
 
----
+ZZZ -> Add into cover letter
 Moreover, the authors deliberately made some settings to make the
 visualization even more trivial, but with no rationality. For example,
 only three angle scenarios (90, 135, 180) are chosen for visualization of
@@ -235,5 +245,5 @@ XXX
 YYY
 3. What's the meaning of (a)-(d) in Figure 10?
 
-ZZZ
+ZZZ -> Cover
 In the timeline view and spatial view, it just allow the users to compare a single ensemble member each time.
